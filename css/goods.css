@@ -1,0 +1,135 @@
+
+
+@charset "UTF-8";
+/* CSS Document */
+*{
+    padding: 0 ;
+    margin:0 ;
+    list-style: none;
+}
+
+.inside_container{
+    width: 1210px;
+    margin: 0 auto;
+    
+}
+.crumb{
+    height: 35px;
+    line-height:  35px;
+}
+.crumb a{
+    display: block;
+    float: left;
+}
+.crumb em{
+    margin: 0 5px;
+    display: block;
+    float: left;
+}
+.position_wrap{
+    background: #ffffff;
+    height: 572px;
+    padding: 60px 30px;
+    
+}
+.position_loft{
+    height: 500px;
+    width: 500px;
+    float: left;
+
+}
+
+
+.position_right{
+    height: 405px;
+    width: 592px;
+    float: right;
+
+}
+h1.pro_detail_title {
+    font-size: 24px;
+    line-height: 1.5rem;
+}
+h1.pro_detail_title_er {
+    font-size: 14px;
+    color: #b0b0b0;
+    padding-top: 8px;
+}
+.detail_price {
+    font-size: 18px;
+    color: #e83632;
+}
+.detail_font {
+    float: left;
+    width: 65px;
+    color: #666;
+}
+.detail_wrap {
+    margin-top: 22px;
+    font-size: 14px;
+}
+.detail_gray {
+    float: left;
+    width: 527px;
+}
+.var_number {
+    height: 27px;
+    width: 40px;
+    text-align: center;
+    float: left;
+    border: 1px solid #e5e5e5;
+    border-left: 0;
+    border-right: 0;
+}
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 24px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.reduce:hover, .add:hover {
+    color: #2f89e4;
+    border: 1px solid #2f89e4;
+}
+.detail_line {
+    line-height: 29px;
+    padding-left: 8px;
+}
+.reduce, .add {
+    border: 1px solid #e5e5e5;
+    float: left;
+    width: 27px;
+    height: 27px;
+    text-align: center;
+    line-height: 27px;
+}
+.var_number {
+    height: 27px;
+    width: 40px;
+    text-align: center;
+    float: left;
+    border: 1px solid #e5e5e5;
+    border-left: 0;
+    border-right: 0;
+}
+
+.ripple{
+    padding: 0 20px;
+    height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+    font-size: 14px;
+    color:#fff;
+    float: left;
+    margin-top:20px ;
+}
+
+.add_shop_cart{
+    background:#2e8ae4;
+
+}
+.buy_now{
+    background: #e83632;
+    margin-left: 25px;
+}
