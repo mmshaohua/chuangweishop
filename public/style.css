@@ -1,0 +1,59 @@
+@charset "UTF-8";
+/* CSS Document */
+html {
+    background: #f4f4f4;
+    height: 100%;
+}
+
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    color: #333;
+    font-size:12px;
+    font-family:tahoma, Arial, microsoft yahei, Helvetica, "Helvetica Neue", "Hiragino Sans GB", "5b8b4f53", "sans-serif";
+}
+
+img {
+    border: 0;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+button, input, select, textarea, h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+}
+
+input, button, textarea, select {
+    outline: none;
+    resize: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+    -webkit-transition: all 0.5s ease-out 0s;
+    -moz-transition: all 0.5s ease-out 0s;
+    transition: all 0.5s ease-out 0s;
+    display: block;
+}
+
+    a:hover {
+        text-decoration: none;
+    }
+
+.clearfix:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+    width: 100%;
+}
