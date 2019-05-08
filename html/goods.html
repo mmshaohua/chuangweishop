@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>商品详情</title>
+    <link rel="stylesheet" href="../public/style.css" type="text/css">
+    <link rel="stylesheet" href="../css/iconfont.css" type="text/css">
+    <link rel="stylesheet" href="../css/goods.css" type="text/css">
+    <script src="../js/jquery.min.js"></script>
+
+    <script src="../js/require.js"> </script>
+</head>
+<body>
+<div class="inside_container">
+        
+    <div class="crumb"><a href="#">首页</a><em>/</em><a href="#" target="_blank">商品列表</a><em>/</em>产品详情页</div>
+
+    <div class="position_wrap  clearfix">
+        <div class="position_loft">
+                <div class="bg_left">
+                        <div id="showbox">
+                            
+    <!--ID:ProInfoImgs执行事件：0-->
+    
+                                    <img src="https://img.coocaa.com/skyworth/product/201811300230555740.jpg" width="430" height="430" />
+                                
+                        </div>
+                        <div id="showsum"></div>
+                        <!--展示图片里边-->
+                        <!-- <p class="showpage" style="width: 500px">
+                            <a href="javascript:void(0);" id="showlast">< </a>
+                            <a href="javascript:void(0);" id="shownext">> </a>
+                        </p> -->
+                    </div>
+                    <div class="bg_right">
+                        <div class="bigshow">
+                            <div class="bigitem">
+                                <img src="../images/pro.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+    
+        </div>
+        <div class="position_right">
+                <h1 class="pro_detail_title">55H6(送挂架)</h1>
+                <h1 class="pro_detail_title_er">55寸|全面屏|超解像技术|防蓝光|2+32G|AI语音|运动补偿</h1>
+                <h1 class="pro_detail_title_er" style="color: red;">5月1-12日,下单送挂架</h1>
+                <h1 class="pro_detail_title_er" style="color: red;"></h1>
+                <div class="detail_wrap clearfix">
+                    <div class="detail_font">售价</div>
+                    <div class="detail_price">￥3288.00</div>
+                </div>
+                <div class="detail_wrap clearfix">
+                    <div class="detail_font">运费</div>
+                    <div class="detail_gray">全场包邮</div>
+                </div>
+                
+                <div class="detail_wrap clearfix">
+                    <div class="detail_font">版本</div>
+                    <div class="detail_gray">
+                        <ul class="detail_version">
+                            
+                                    <a id="acLi_14690420" href="http://shop.skyworth.com/Product/ProInfo.aspx?id=14690420">
+                                        <li>55H6(送挂架)</li>
+                                    </a>
+                                
+                                    <a id="acLi_14690408" href="http://shop.skyworth.com/Product/ProInfo.aspx?id=14690408">
+                                        <li>65H6</li>
+                                    </a>
+                                
+                                    <a id="acLi_14690435" href="http://shop.skyworth.com/Product/ProInfo.aspx?id=14690435">
+                                        <li>50H6</li>
+                                    </a>
+                                
+                        </ul>
+                    </div>
+                </div>
+                <div class="detail_wrap clearfix">
+                    <div class="detail_font">数量</div>
+                    <div class="detail_gray">
+                        <a class="reduce" href="javascript:void(0)" onclick="AddInp(-1)"><i class="iconfont icon-jian">-</i></a>
+                        <input type="text" value="1" id="InpQuantity" class="var_number">
+                        <a href="javascript:void(0)" class="add" onclick="AddInp(1)"><i class="iconfont icon-jia">+</i></a>
+                        <span class="detail_line">件</span>
+                    </div>
+                </div>
+                
+                <script>
+                    var AddInp = function (i) {
+                        var ii = parseInt($("#InpQuantity").val()) + i;
+                        if (ii > 0) {
+                            $("#InpQuantity").val(ii);
+                        }
+                    }
+                </script>
+                <div class="detail_wrap clearfix">
+                    <div class="detail_font">服务</div>
+                    <div class="detail_gray">由 <span style="color: red;">创维-RGB电子有限公司</span> 发货，并提供售后服务。</div>
+                </div>
+                <div class="detail_wrap clearfix">
+                    
+                    <div class="add_shop_cart ripple " id="btn_add_shop_cart">加入购物车</div>
+                    <div class="buy_now ripple" id="btn_add_l_shop_cart">立即购买</div>
+                    
+                </div>
+            </div>
+        </div>
+
+
+     </div>
+
+</div>
+
+
+</body>
+</html>
