@@ -172,14 +172,15 @@ ul.detail_version li {
     background: #e83632;
     margin-left: 25px;
 }
+
 #bigpic {
     width: 550px;
     height: 560px;
     position: absolute;
-    left: 600px;
+    left: 650px;
     top: 36px;
     overflow: hidden;
-   display: none;
+    display: none;
     z-index: 10;
 }
 
@@ -187,4 +188,47 @@ ul.detail_version li {
     position: absolute;
     left: 0;
     top: 0;
+}
+#showbox{
+    width: 500px;
+    height: 500px;
+    position: relative;
+}
+#showbox img{
+    width: 500px;
+    height: 500px;
+    display: block;
+   
+}
+#showsum>p>span>img{
+    box-sizing: border-box; 
+}
+#glass {
+    width: 300px;
+    height: 300px;
+    background: blue;
+    opacity: 0.3;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+
+.crumb span{
+    color:#b0b0b0;
+    
+
+}
+.ripple a{
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    display: block;
+
+
+}
+.bsr{
+    border:1px solid red;
+    z-index: ！important;
 }

@@ -1,0 +1,281 @@
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+    <title>放大镜</title>
+    <meta charset="utf-8">
+</head>
+<style type="text/css">
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    body {
+        width: 960px;
+        margin: 40px auto;
+    }
+
+    #small {
+        width: 300px;
+        height: 200px;
+        border: 1px solid red;
+        border-radius: 4px;
+        position: relative;
+    }
+
+    #small img {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+
+    div {
+        float: left;
+        margin-right: 10px;
+    }
+
+    #big {
+        width: 300px;
+        height: 200px;
+        overflow: hidden;
+        position: relative;
+        border: 1px solid #eee;
+        border-radius: 4px;
+        display: none;
+    }
+
+    #big img{
+        width: 2000px;
+        height: 1600px;
+        display: block;
+    }
+
+    #look_girl {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+    }
+
+    #move {
+        width: 100px;
+        height: 100px;
+        background: #000;
+        opacity: .5;
+        position: absolute;
+        display: none;
+        left: 0px;
+        top: 0px;
+    }
+</style>
+
+
+<body>
+    <div id="small">
+        <img src="./1.jpg">
+        <p id="move"></p>
+    </div>
+    <div id="big">
+        <img src="./1.jpg" id="look_girl">
+    </div>
+</body>
+
+</html>
+<script type="text/javascript">
+    var move = document.getElementById('move');
+    var small = document.getElementById('small');
+    var big = document.getElementById('big');
+    var look_girl = document.getElementById('look_girl');
+    small.onmousemove = function (event) {
+        event = event || window.event;
+        this.style.cursor = 'pointer';
+        // 计算move移动块的left值d
+        var move_left = event.clientX - this.offsetLeft - move.offsetWidth / 2;
+        // 计算move移动块的top值
+        var move_top = event.clientY - this.offsetTop - move.offsetHeight / 2;
+
+
+       
+
+
+        // 超出左边界赋值为0
+        move_left = move_left < 0 ? 0 : move_left;
+        // 超出右边界赋值为盒子宽度-移动块的宽度
+        move_left = move_left > this.offsetWidth - move.offsetWidth ? this.offsetWidth - move.offsetWidth : move_left;
+        // 超出上边界赋值为0
+        move_top = move_top < 0 ? 0 : move_top;
+        // 超出下边界赋值为盒子高度-移动块高度
+        move_top = move_top > this.offsetHeight - move.offsetHeight ? this.offsetHeight - move.offsetHeight : move_top;
+        // 修改移动块left、top值
+
+        move.style.left = move_left + 'px';
+        move.style.top = move_top + 'px';
+     
+        /*
+            计算图片需要移动的坐标
+
+            距离左边left    图片宽度      盒子宽度          距离左边left    图片宽度           盒子宽度
+            big_x/(look_girl.offsetWidth-big.offsetWidth) = move_left/(small.offsetWidth-move.offsetWidth);
+
+            big_y/(look_girl.offsetHeight-big.offsetHeight) = move_top/(small.offsetHeight-move.offsetHeight);
+
+        */
+
+        var big_x = move_left / (small.offsetWidth - move.offsetWidth) * (look_girl.offsetWidth - big.offsetWidth);
+        var big_y = move_top / (small.offsetHeight - move.offsetHeight) * (look_girl.offsetHeight - big.offsetHeight);
+        // 修改图片定位
+        look_girl.style.left = -big_x + 'px';
+        look_girl.style.top = -big_y + 'px';
+    }
+
+    small.onmouseover = function () {
+        move.style.display = 'block';
+        big.style.display = 'block';
+    }
+
+    small.onmouseout = function () {
+        move.style.display = 'none';
+        big.style.display = 'none';
+    }
+</script> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>放大镜</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            position: relative;
+        }
+
+        #smallpic {
+            width: 528px;
+            height: 300px;
+            position: relative;
+        }
+
+        #glass {
+            width: 100px;
+            height: 100px;
+            background: red;
+            opacity: 0.3;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+
+        #bigpic {
+            width: 650px;
+            height: 760px;
+            position: absolute;
+            left: 600px;
+            top: 0;
+            overflow: hidden;
+            display: none;
+        }
+
+        #bigpic img {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+
+    <!-- <script type="text/javascript" src="jquery-3.2.1.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script type="text/javascript">
+    //3个方面,在小图片上移动,大图片上有对应的移动.
+    //计算放大镜在小图片上的位置.
+    //鼠标放在小图片上,呈现放大镜和大图片
+    //
+    $(function () {
+        //鼠标放在小图片上,呈现放大镜和大图片
+        //
+        $("#smallpic").on("mouseover", function () {
+            $("#glass").css("display", "block");
+            $("#bigpic").css("display", "block")
+        })
+
+        //鼠标移出时,消失
+
+        $("#smallpic").on("mouseout", function () {
+            $("#glass").css("display", "none");
+            $("#bigpic").css("display", "none")
+        })
+
+
+//鼠标在图片上移动时
+
+$("#smallpic").on("mousemove", function (ev) {
+    //获取鼠标在小图片上的位置
+
+    var disX = ev.clientX - $("#smallpic").offset().left - $("#glass").width() / 2;
+
+
+    var disY = ev.clientY - $("#smallpic").offset().top - $("#glass").height() / 2;
+
+    //判断,让放大镜不能出界
+
+    if (disX < 0) {
+        disX = 0
+    } else if (disX > ($("#smallpic").width() - $("#glass").width())) {
+        disX = $("#smallpic").width() - $("#glass").width()
+    }
+
+    if (disY < 0) {
+        disY = 0
+    } else if (disY > ($("#smallpic").height() - $("#glass").height())) {
+        disY = $("#smallpic").height() - $("#glass").height()
+    }
+
+
+            //鼠标移动起来
+            $("#glass").css({
+                left: disX + "px",
+                top: disY + "px"
+            })
+
+            //  disX / ($("#smallpic").width() - $("#glass").width()) = left / ($("#oImg").width() - $("#bigpic").width());
+
+            //大图片的移动其实和放大镜移动时按照一定比例来进行
+            //比例
+            var l = disX / ($("#smallpic").width() - $("#glass").width())
+
+            var t = disY / ($("#smallpic").height() - $("#glass").height())
+
+            //大图片移动,放大镜向左移动,大图片整体向右移动,所以是反的
+            //
+            $("#oImg").css({
+                left: -l * ($("#oImg").width() - $("#bigpic").width()) + "px",
+                top: -t * ($("#oImg").height() - $("#bigpic").height()) + "px"
+            })
+        })
+    })
+</script>
+</head>
+
+<body>
+
+<div id="smallpic">
+    <div id="glass"></div>
+    <div><img src="./1.jpg"></div>
+</div>
+
+
+<div id="bigpic">
+    <img src="./1.jpg" id="oImg">
+</div>
+
+</body>
+</html>
+
