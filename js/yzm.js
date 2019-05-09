@@ -10,7 +10,7 @@ $(function () {
         //toLowerCase(); 把大写转换为小写，则验证码不分大小写
         var num = show_num.join("");
         if (val == '') {
-            alert('请输入验证码！');
+            /* alert('请输入验证码！'); */
         } else if (val == num) {
            // alert('提交成功！');
             $("#yz").val('');
@@ -68,8 +68,8 @@ $(function () {
             context.stroke();
         }
     }
-
-    function randomColor() { //得到随机的颜色值
+//得到随机的颜色值
+    function randomColor() { 
         var r = Math.floor(Math.random() * 256);
         var g = Math.floor(Math.random() * 256);
         var b = Math.floor(Math.random() * 256);

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../public/style.css">
     <link rel="stylesheet" href="../public/css/bootstrap.css">
     <script src="../public/jquery.js"></script>
-    <script src="../js/yzm.js"></script>
+   <!--  <script src="../js/yzm.js"></script> -->
 </head>
 <body >
     <div class="login-container  clearfix" >
@@ -75,13 +75,10 @@
                     }
                 }
                 if(k = 1){
-                    alert("用户不存在");
+                    alert("用户不存在，正在跳转到注册界面！");
+                    window.location.href = "loginReg.html";
                     clear();
                 }
-            }else{
-                alert("用户不存在，正在跳转到注册界面！");
-                window.location.href = "loginReg.html";
-                clear();
             }
         }
     }

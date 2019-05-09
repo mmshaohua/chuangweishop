@@ -35,7 +35,7 @@
                         </div>
                         <div class="input_block">
                             <div class="step_input">
-                                <input type="text" id="Phone" placeholder="请输入手机号码" value="" class="login_input" />
+                                <input type="text" id="phone" placeholder="请输入手机号码" value="" class="login_input" />
                             </div>
                             <div class="login_tip">验证完成后，可以用此手机号进行登录和找回密码。</div>
                         </div>
@@ -53,17 +53,62 @@
                             </div>
                             <div class="login_tip">请保持两次输入的密码一致</div>
                         </div>
-                    </div>
-
-                    
+                    </div>   
                 </div>
             </div>
             <div class="bot_btn">
-                <button class="step-next" id="btn">注册成功</button>
+                <button class="step-next btn" onclick="register()">注册成功</button>
             </div>
         </div>
     </div>
 </div>
-        
+ <script>
+    function register(){
+         //alert("1");
+         if(isNone()){
+             var arr = [];
+             if(localStorage.user){
+                 arr = eval(localStorage.user);
+                 for(e in arr){
+                     if($("#phone").val() == arr[e].loginName){
+                         alert("账号已注册！");
+                         clear();
+                         return;
+                     }
+                 }
+             }
+             var user = {
+                 'loginName':$("#phone").val(),
+                 'loginPsd':$("#pwd").val()
+             };
+             arr.push(user);
+             console.log($("#phone").val());
+             localStorage.user = JSON.stringify(arr);
+             alert("注册成功");
+             window.location.href = "login.html";
+             clear();
+         }
+     }
+     function clear(){
+         $("#yz").val("");
+         $("#phone").val("");
+         $("#pwd").val("");
+         $("#cpwd").val("");
+     }
+     function isNone(){
+        if($("#phone").val() == ""){
+            alert("电话号码不能为空");
+            return false;
+        }else if($("#pwd").val() == ""){
+            alert("密码不能为空");
+            return false;
+        }else if($("#pwd").val() != $("#cpwd").val()){
+            alert("两次密码不一致，请检查！");
+            return false;
+        }else{
+            return true;
+        }
+    }
+ </script>       
 </body>
 </html>
