@@ -3,6 +3,7 @@
 body,h1,h2,h3,h4,h5,h6,p,img,ol,ul,li,dl,dt,dd,th,td,form,fieldset,legend,input,
 textarea,select{margin:0; padding:0;}
 a{text-decoration:none;}
+a:hover{text-decoration: none;}
 ul li,ol li{list-style:none;}
 fieldset,img{ border:none; }
 em,i{font-style:normal}
@@ -11,7 +12,13 @@ b,strong{font-weight:normal}
 visibility:hidden;}
 
 .head,.top_content,.main{
-    width: 1210px; margin: 0 auto; background: #999;
+    width: 1210px; margin: 0 auto; 
+}
+.top_content{
+    float: left;
+    position: absolute;
+    left: 78px;
+    top:40px;
 }
 
 .header{
@@ -43,6 +50,7 @@ visibility:hidden;}
 }
 .head_right ul li a:hover{
     color:#666;
+    text-decoration: none;
 }
 .head_right ul li:nth-of-type(4) a{
     color:#0096de;
@@ -78,21 +86,33 @@ visibility:hidden;}
 .top_search_input{
     position: relative;
 }
+.top_search_input .glyphicon{
+    position: absolute;
+    left:425px;
+    top:7px;
+    z-index: 1;
+    color: #FFF;
+    font-size: 23px;
+    cursor: pointer;
+}
 .search_text{
     width: 460px;
-    height: 32px;
+    height: 36px;
     border-radius:50px;
-    border:2px solid #2b9ce4;
+    border:2px solid #2f87e5;
+    text-indent: 15px;
+    outline: none;
 }
 .search_button{
     border: 0;
     width: 56px;
     height: 36px;
-    background: #2b9ce4;
+    background:linear-gradient(to right,#19e8e2,#2f87e5);
     position: absolute;
     top: 0;
     left: 406px;
     border-radius:50px;
+    cursor: pointer;
 }
 .top_search_lable{
     padding: 5px 0 0 16px;
@@ -105,6 +125,7 @@ visibility:hidden;}
 }
 .top_search_lable a:hover{
     color: #e83733;
+    text-decoration: none;
 }
 
 .top_searve{
@@ -124,8 +145,27 @@ visibility:hidden;}
     float: right;
     margin-bottom: 2px;
 }
+.top_searve:hover .shopcare_list{
+    display: block;
+}
+.shopcare_hover dt{
+    position: relative;
+    padding: 5px 10px;
+}
+.shopcare_hover dt .glyphicon{
+    position: absolute;
+    left:-10px;
+    top:8px;
+    color: #6faae0;
+    font-size: 16px;
+}
 .shopcare_hover dt a{
     font-size: 10px;
+    color: #000;
+}
+.shopcare_hover dt a:hover{
+    text-decoration: none;
+    color: #000;
 }
 .font_number {
     position: absolute;
@@ -138,5 +178,58 @@ visibility:hidden;}
     background: #e83632;
     color: #FFF;
     text-align: center;
-    padding: 0 1px;
+    padding: 0px 1px;
+}
+
+.shopcare_list{
+    position: absolute;
+    width: 305px;
+    height: 80px;
+    border: 1px solid gainsboro;
+    border-radius: 10px;
+    left:-138px;
+    top: 52px;
+    display: none;
+}
+.shopcare_list p{
+    width: 305px;
+    height: 40px;
+    color: #6f6e6e;
+    font-size: 10px;
+    position: absolute;
+    left: -113px;
+    top: 10px;
+}
+.shopcare_list p .glyphicon{
+    color: #6f6e6e;
+    font-size: 12px;
+    position: absolute;
+    left: 392px;
+    top: -1px;
+}
+.shopcare_list .shopcare_botton{
+    background: #f1f3f4;
+    width: 305px;
+    height: 40px;
+    position: absolute;
+    top:40px;
+    border-radius: 10px;
+}
+.shopcare_list .shopcare_botton span{
+    display: inline-block;
+    position: absolute;
+    left:10px;
+    top: 10px;
+}
+.shopcare_list .shopcare_botton span:nth-of-type(2){
+    left:84px;
+    top: 10px;
+}
+.shopcare_list .shopcare_botton .btn{
+    width: 78px;
+    height: 28px;
+    position: absolute;
+    left:212px;
+    top: 6px;
+    font-size: 10px;
 }
