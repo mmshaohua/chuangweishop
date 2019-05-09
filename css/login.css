@@ -1,0 +1,117 @@
+
+.warp{
+    background: #fff;
+    position: relative;
+    width: 1090px;
+    margin: 10px auto;
+    height: 550px;
+    box-shadow: 0 0 50px -10px rgba(0,0,0,.2);
+}
+.login-head{
+    width: 1090px;
+    margin: 0 auto;
+    height: 100px;
+}
+.login-left{
+    float: left;
+   
+}
+.logo{
+   width: 266px;
+   height: auto;
+   margin-top:35px; 
+}
+.login-left a img{
+    width: 266px;
+    height: auto;
+    margin-top: 35px;
+}
+.login-right{
+    float: right;
+    line-height: 100px;
+    font-size:14px; 
+    margin-right: 5px;
+}
+.login-right a{
+    display: inline-block;
+    color: red;
+}
+.login-right a:hover{
+    text-decoration: none;
+    color: red;
+}
+.img-left{
+    float:left;
+   display: inline-block;
+}
+.list-right{
+    padding: 30px;
+    height: 550px;
+    width: 392px;
+    float: left;
+}
+.list-right h3{
+    height: 40px;
+    margin: 20px 0 30px 0;
+}
+.list-on{
+    width: 100%;
+    margin-top: 10px;
+}
+.list-right input{
+    position: relative;
+    width: 310px;
+    height: 45px;
+    padding: 0 10px;
+    font-size: 14px;
+    border: 1px solid #e5e5e5;
+    margin-bottom:10px; 
+    border-radius: 3px;
+}
+.list-right .big-door{
+    position: absolute;right: 69px;top: 247px;
+
+}
+.list-right .yzm{
+    border: 1px solid #000;
+    width: 70px;
+    height: 30px;
+   float: right;
+}
+.list-right .con{
+    float: right;
+   line-height: 30px;
+   margin-left: 5px;
+}
+.list-right .btn{
+    width: 310px;
+    margin-top: 40px;
+    margin-bottom: 5px;
+}
+.login-click{
+    float: left;
+    color: #999;
+    font-size: 12px;
+   
+}
+.login-click .chk{
+   margin-right: 5px;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #000;
+    vertical-align: middle;
+    margin-top: -1px;
+}
+.login-click-right{
+    float:right;
+    margin-right: 20px;
+}
+.login-click-right a{
+    display: inline-block;
+    font-size:12px; 
+    color: #333;
+    
+}
+#changeImg{
+    text-decoration: none;
+}

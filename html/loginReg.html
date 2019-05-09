@@ -1,428 +1,69 @@
-
-
-
-<!doctype html>
-<html style="background: #FFF;">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>创维集团-全球电商-注册账号</title>
-    <link href="../css/loginReg.css" rel="stylesheet" type="text/css">
-    <!-- <link href="../css/iconfont.css" rel="stylesheet" type="text/css"> -->
-   <!--  <link rel="shortcut icon" href="https://www.skyworthds.com/favicon.ico" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../public/style.css">
+    
+    <link rel="stylesheet" href="../css/loginReg.css">
     <script src="../public/jquery.js"></script>
-    <script src="../js/jquery.step.js"></script>
-    <script>
-        function checkPhoneFormat(str) {
-            var reg = /^(1[0-9]{10})$/;
-            if (reg.test(str))// 电话号码格式正确   
-                return true;
-            else //号码格式错误
-                return false;
-        }
-
-        var funGet = function () {
-            $("#btn_code").attr("disabled", "disabled");
-            var data = {};
-            data.action = "GetCodeByReg";
-            data.phone = $("#txtPhone").val();
-            data.code = $("#txtImgCode").val();
-            if (!data.code) {
-                alert('验证码不能为空!');
-                $("#btn_code").removeAttr("disabled");//将按钮可用
-                return;
-            }
-            $.ajax({
-                type: 'POST',
-                url: '../php/loginReg.php',
-                data: data,
-                dataType: "html",
-                async: true,     // 默认为异步请求
-                success: function (t) {
-
-                    if (t) {
-                        if (t == "1") {
-                            c = 120;
-                            isCode = true;
-                            CountdownStart();
-                        } else {
-                            if (t == -1) {
-                                alert('手机号码不能为空....');
-                            } else {
-                                alert('发送失败,稍后在试试....原因：' + t);
-                            }
-                        }
-                    }
-                    $("#btn_code").removeAttr("disabled");//将按钮可用
-                }, error: function () {
-                    $("#btn_code").removeAttr("disabled");//将按钮可用
-                }
-            });
-        }
-
-        //倒计时
-        var c = 0;
-        var btn = $("#txtPhone");
-        var timeline;
-        function CountdownStart() {
-            timeline = setInterval(Countdown, 1000);
-        }
-
-        function Countdown() {
-            if (c > 0) {
-                $("#btn_code").attr("disabled", "disabled");
-                $("#btn_code").val("" + c + "");
-                c--;
-            }
-            else {
-                //getCode();
-                $("#btn_code").removeAttr("disabled");//将按钮可用
-                $("#btn_code").val("获取");
-                clearInterval(timeline);
-            }
-        }
-        var isCh = false, isCode = false;
-        var bs = 1;
-        function funCode() {
-            $("#nextBtn").attr("disabled", "disabled");
-            var data = {};
-            data.action = "VCode";
-            data.code = $("#txtCode").val();
-            data.phone = $("#txtPhone").val();
-            $.ajax({
-                type: 'POST',
-                url: '../php/loginReg.php',
-                data: data,
-                dataType: "html",
-                async: true,     // 默认为异步请求
-                 error: function () {
-                    $("#nextBtn").removeAttr("disabled");//将按钮可用
-                }
-            });
-        }
-
-        var Reg = function () {
-            $("#nextBtn").attr("disabled", "disabled");
-            var data = {};
-            data.action = "Reg";
-            data.code = $("#txtCode").val();
-            data.phone = $("#txtPhone").val();
-            data.pwd = $("#pwd").val();
-            $.ajax({
-                type: 'POST',
-                url: '../php/loginReg.php',
-                data: data,
-                dataType: "html",
-                async: true,     // 默认为异步请求
-                success: function (t) {
-                    if (t) {
-                        if (t == "1") {
-                            var yes = step.nextStep();
-                            bs++;
-                            if (yes) {
-                                $("#nextBtn").hide();
-                            }
-                        } else {
-                            alert("注册失败,原因：" + t);
-                        }
-                    }
-                    $("#nextBtn").removeAttr("disabled");//将按钮可用
-                }, error: function () {
-                    $("#nextBtn").removeAttr("disabled");//将按钮可用
-                }
-            });
-        }
-
-        var step = null;
-        $(function () {
-            step = $("#myStep").step();
-            $("#nextBtn").click(function (event) {
-                var phone = $("#txtPhone").val();
-                var pwd = $("#pwd").val();
-                var cpwd = $("#cpwd").val();
-
-                if (bs == "1") {
-                    if (phone == "") {
-                        alert("手机号码不能为空？");
-                        $("#txtPhone").select();
-                        return false;
-                    }
-                    if (!checkPhoneFormat(phone)) {
-                        alert("错误的手机号码？");
-                        $("#txtPhone").select();
-                        return false;
-                    }
-                    
-                    funCode();
-                } else if (bs == "2") {
-                    if (pwd == "") {
-                        alert("密码不能为空？");
-                        $("#pwd").select();
-                        return false;
-                    }
-                    if (cpwd == "") {
-                        alert("密码不能为空？");
-                        $("#cpwd").select();
-                        return false;
-                    }
-                    var regex = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,20}$/;
-                    if (!regex.test(pwd)) {
-                        alert("密码格式：6-20位字母数字组合？");
-                        $("#pwd").select();
-                        return false;
-                    }
-                    if (pwd != cpwd) {
-                        alert("密码两次输入不一致？");
-                        $("#pwd").select();
-                        return false;
-                    }
-                    Reg();
-                }
-            });
-        });
-    </script>
+    <script src="../js/yzm.js"></script>
+    <title>Document</title>
 </head>
-
 <body>
-    <header class="login_head">
-        <div class="login_top">
-            <div class="login_top_right">已有账号？ <a href="login.html">请登录</a></div>
-            <div class="login_top_left">
-                <a href="index.html">
-                    <img src="../images/logo.png"></a>
+<div class="login_container">
+    <div class="regist_wrap ">
+        <div class="regis_content">
+            <div class="step-body" id="myStep">
+                <div class="step-header">
+                    <ul> 
+                        <li> <p>注册</p> </li>
+                    </ul>
+                </div>
+                <div class="step-content">
+                    <div class="step-list">
+                        <div class="input_block">
+                            <div class="step_input">
+                                <input type="text" id="yz" placeholder="请输入图形验证码" value="" class="login_input_ma ma_ter" />
+                                <span class="login_span ma_span">
+                                    <canvas id="myCanvas" style="width:70px;height:30px"></canvas>
+                                    <a href="javascript:void(0);" style="cursor: pointer;" id="changeImg">换一张</a>
+                                </span>
+                            </div>
+                            <div class="login_tip">请输入图形验证码。</div>
+                        </div>
+                        <div class="input_block">
+                            <div class="step_input">
+                                <input type="text" id="Phone" placeholder="请输入手机号码" value="" class="login_input" />
+                            </div>
+                            <div class="login_tip">验证完成后，可以用此手机号进行登录和找回密码。</div>
+                        </div>
+                    </div>
+                    <div class="step-list">
+                        <div class="input_block">
+                            <div class="step_input">
+                                <input type="password" id="pwd" placeholder="请设置您的密码" class="login_input">
+                            </div>
+                            <div class="login_tip">建议使用两种或两种以上的字符设置密码</div>
+                        </div>
+                        <div class="input_block">
+                            <div class="step_input">
+                                <input type="password" id="cpwd" placeholder="请确认您的密码" class="login_input">
+                            </div>
+                            <div class="login_tip">请保持两次输入的密码一致</div>
+                        </div>
+                    </div>
+
+                    
+                </div>
             </div>
-        </div>
-    </header>
-    <div class="login_container">
-        <div class="regist_wrap ">
-            <div class="regis_content">
-                <div class="step-body" id="myStep">
-                    <div class="step-header">
-                        <ul>
-                            <li>
-                                <p>验证手机号</p>
-                            </li>
-                            <li>
-                                <p>填写账号信息</p>
-                            </li>
-                            <li>
-                                <p>注册成功</p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="step-content">
-                        <div class="step-list">
-                            <div class="input_block">
-                                <div class="step_input">
-                                    <i class="iconfont icon-yanzhengma"></i>
-                                    <input type="text" id="txtImgCode" placeholder="请输入验证码" value="" class="login_input_ma ma_ter" />
-                                    <span class="login_span ma_span">
-                                        <canvas id="canvas" style="width:64px;height:30px" onclick="huan()">您的浏览器不支持canvas</canvas>
-                                        <a style="cursor: pointer;" onclick="huan()"></a>换一张</a>
-                                    </span>
-                                </div>
-                                <div class="login_tip"><i class="iconfont  icon-tishi1"></i>请输入图形验证码。</div>
-                            </div>
-                            <div class="input_block">
-                                <div class="step_input">
-                                    <input type="text" id="txtPhone" placeholder="请输入手机号码" value="" class="login_input" />
-                                    <i class="iconfont icon-shouji1"></i>
-                                </div>
-                                <div class="login_tip"><i class="iconfont  icon-tishi1"></i>验证完成后，可以用此手机号进行登录和找回密码。</div>
-                            </div>
-                        </div>
-
-                        <div class="step-list">
-                            <div class="input_block">
-                                <div class="step_input">
-                                    <input type="password" id="pwd" placeholder="请设置您的密码" class="login_input">
-                                    <i class="iconfont icon-mima"></i>
-                                </div>
-                                <div class="login_tip"><i class="iconfont  icon-tishi1"></i>建议使用两种或两种以上的字符设置密码</div>
-                            </div>
-                            <div class="input_block">
-                                <div class="step_input">
-                                    <input type="password" id="cpwd" placeholder="请确认您的密码" class="login_input">
-                                    <i class="iconfont icon-querenmima"></i>
-                                </div>
-                                <div class="login_tip"><i class="iconfont  icon-tishi1"></i>请保持两次输入的密码一致</div>
-                            </div>
-                        </div>
-
-                        <div class="step-list last_step">
-                            <div class="succ_icon">
-                                <i class="iconfont icon-wancheng"></i>
-                                <p class="succ_font">注册成功！<a href="login.html">请登录</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="bot_btn">
-                    <button class="step-next" id="nextBtn">下一步</button>
-                </div>
+            <div class="bot_btn">
+                <button class="step-next" id="btn">注册成功</button>
             </div>
         </div>
     </div>
-    <footer class="login_footer">
-        <div class="login_foot">
-            <ul>
-                <li>关于我们</li>
-                <li>|</li>
-                <li>联系我们</li>
-                <li>|</li>
-                <li>自助服务</li>
-                <li>|</li>
-                <li>友情链接</li>
-                <li>|</li>
-                <li>关注我们</li>
-                <li>|</li>
-                <li>购买流程</li>
-                <li>|</li>
-                <li>安装调试</li>
-                <li>|</li>
-                <li>税票制度</li>
-            </ul>
-            <p>ICP备案证号：粤ICP备09157852号</p>
-        </div>
-    </footer>
+</div>
+        
 </body>
-<script>
-/* var createVeritification = function(){
-	var GLOBAL_CHAR_NUM = 4;
-	var GLOBAL_CHAR_STRING = "";
-	var GLOBAL_COLOR_SET = [
-		"#FFFFFF", "#DDDDDD", "#AAAAAA", "#888888", "#666666", "#444444", "#000000",
-		"#FFB7DD", "#FF88C2", "#FF44AA", "#FF0088", "#C10066", "#A20055", "#8C0044",
-		"#FFCCCC", "#FF8888", "#FF3333", "#FF0000", "#CC0000", "#AA0000", "#880000",
-		"#FFC8B4", "#FFA488", "#FF7744", "#FF5511", "#E63F00", "#C63300", "#A42D00",
-		"#FFDDAA", "#FFBB66", "#FFAA33", "#FF8800", "#EE7700", "#CC6600", "#BB5500",
-		"#FFEE99", "#FFDD55", "#FFCC22", "#FFBB00", "#DDAA00", "#AA7700", "#886600",
-		"#FFFFBB", "#FFFF77", "#FFFF33", "#FFFF00", "#EEEE00", "#BBBB00", "#888800",
-		"#EEFFBB", "#DDFF77", "#CCFF33", "#BBFF00", "#99DD00", "#88AA00", "#668800",
-		"#CCFF99", "#BBFF66", "#99FF33", "#77FF00", "#66DD00", "#55AA00", "#227700",
-		"#99FF99", "#66FF66", "#33FF33", "#00FF00", "#00DD00", "#00AA00", "#008800",
-		"#BBFFEE", "#77FFCC", "#33FFAA", "#00FF99", "#00DD77", "#00AA55", "#008844",
-		"#AAFFEE", "#77FFEE", "#33FFDD", "#00FFCC", "#00DDAA", "#00AA88", "#008866",
-		"#99FFFF", "#66FFFF", "#33FFFF", "#00FFFF", "#00DDDD", "#00AAAA", "#008888",
-		"#CCEEFF", "#77DDFF", "#33CCFF", "#00BBFF", "#009FCC", "#0088A8", "#007799",
-		"#CCDDFF", "#99BBFF", "#5599FF", "#0066FF", "#0044BB", "#003C9D", "#003377",
-		"#CCCCFF", "#9999FF", "#5555FF", "#0000FF", "#0000CC", "#0000AA", "#000088",
-		"#CCBBFF", "#9F88FF", "#7744FF", "#5500FF", "#4400CC", "#2200AA", "#220088",
-		"#D1BBFF", "#B088FF", "#9955FF", "#7700FF", "#5500DD", "#4400B3", "#3A0088",
-		"#E8CCFF", "#D28EFF", "#B94FFF", "#9900FF", "#7700BB", "#66009D", "#550088",
-		"#F0BBFF", "#E38EFF", "#E93EFF", "#CC00FF", "#A500CC", "#7A0099", "#660077",
-		"#FFB3FF", "#FF77FF", "#FF3EFF", "#FF00FF", "#CC00CC", "#990099", "#770077"
-	];
- 
-	var chars = [];
-	var ctx = undefined;
-	var timer = undefined;
-	var canvasWidth = 1000;
-	var canvasHeight = 500;
- 
-	// 获取canvas 上下文环境
-	var getContext = function(){
-		var canvas = document.getElementById("canvas");
-		ctx =canvas.getContext("2d");
-		canvasWidth = canvas.width;
-		canvasHeight = canvas.height;
-		return ctx;
-	};
- 
-	// 获取单个字符, 字符范围 0-9 A-Z a-z 
-	var getChar = function(){
-		var char = '';
-		// 返回 0- 61之间的整数
-		var seed = Math.floor(Math.random()*62);
- 
-		if(seed < 10)			// seed 在 0- 9之间,字符为数字
-			char = Math.floor(Math.random()*10);
-		else if(seed < 36)	// seed 在10-35之间,字符为大写字母
-			char = String.fromCharCode(Math.floor(Math.random()*25.99)+65);
-		else if(seed < 62)	// seed 在36-62之间,字符为小写字母
-			char = String.fromCharCode(Math.floor(Math.random()*25.99)+97);
-		return char;
-	};
- 
-	// 将单个字符封装为对象
-	var getPackageChars = function(){
-		for(var i=0; i<GLOBAL_CHAR_NUM; i++){
-			chars[i] = {
-				"x": canvasWidth/GLOBAL_CHAR_NUM*i,
-				"y": canvasHeight/10*7,
-				"size": Math.floor(((canvasWidth/GLOBAL_CHAR_NUM > canvasHeight)?
-					canvasHeight:canvasWidth)*8/10),
-				"char": getChar(),
-				"color": GLOBAL_COLOR_SET[Math.floor(Math.random()*(GLOBAL_COLOR_SET.length-0.01))]
-			};
-			// 字符位置移动控制 bar
-			chars[i].posCtrl = (i%2 == 0)? -1: 1;
-		}
-		return chars;
-	};
-	// 绘制字符
-	var draw = function(){
-		// 清空 画布
-		ctx.clearRect(0,0,canvasWidth,canvasHeight);
-		// 绘制 浅灰色背景
-		ctx.fillStyle = "#eee";
-		ctx.fillRect(0, 0, canvasWidth, canvasHeight );
-		// 绘制 字符
-		// ctx.font="72px Microsoft YaHei";
-		ctx.font="84px Georgia";
-		for(var i=0;i<GLOBAL_CHAR_NUM;i++){
-			ctx.strokeStyle = chars[i].color;
-			ctx.strokeText(chars[i].char,chars[i].x,chars[i].y);
-		}
-	};
- 
-	// 字体动画效果
-	var animation = function(){
-		// 初始化 timer
-		clearInterval(timer);
- 
-		timer = setInterval(function(){
-			// 动态改变字符位置
-			for(var i=0;i<GLOBAL_CHAR_NUM;i++){
-				chars[i].y += chars[i].posCtrl;
-					if(chars[i].y < canvasHeight * 5/10 || chars[i].y > canvasHeight * 9/10)
-						chars[i].posCtrl = -chars[i].posCtrl;
-			}
-			// 重绘字符
-			draw();
-		},50);
-	};
- 
-	// 创建静态字体 canvas
-	var createStatic = function(){
-		console.log(getContext());
-		console.log(getPackageChars());
-		draw();
-	};
- 
-	// 创建动画字体 canvas
-	var createAnimation = function(){
-		getContext();
-		getPackageChars();
-		animation();
-	};
- 
-	return{
-		"createStatic": createStatic,
-		"createAnimation": createAnimation,
-		"veritificate": veritificate
-	}
-};
- 
- 
-var test = new createVeritification();
-test.createAnimation();
-// test.createStatic();
- 
-// 点击刷新验证码
-var toggleVeritification = function(){
-	test.createAnimation();
-};
-  */
-
-</script>
 </html>
