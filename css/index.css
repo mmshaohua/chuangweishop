@@ -8,6 +8,8 @@
     height: 132px;
     background: #fff;
 }
+
+/* 导航栏 */
 #nav{
     height: 36px;
     line-height: 36px;
@@ -18,7 +20,7 @@
     float: left; 
     width: 194px;
     background: #2e8ae4;
-    margin-right: 2px;
+    margin-right: 3px;
 }
 .nav_a a{
     color: #fff;
@@ -34,7 +36,362 @@
 }
 .nav_ul li{
     float: left;
+    transition: all 0.8s ease-out 0s;
 }
 .nav_ul li a{
     padding: 0 26px;
+    color: #333;
+}
+.nav_ul li:hover,.nav_ul li a:hover{
+    color: #fff;
+    background: #2e8ae4;
+}
+
+/* nav 二级导航 */
+.nav_menu{
+    position: relative;
+    z-index: 100;
+}
+.nav_cont{
+    position: absolute;
+    left: 0px;
+    top: 36px;
+    display: block;
+    height: 510px;
+    width: 194px;
+    background: linear-gradient(#3084e5, #18ebe2);
+    opacity: .9;
+}
+.nav_cont a{
+    color: #fff;
+    padding-left: 16px;
+    height: 36px;
+    line-height: 36px;
+}
+.nav_cont i{
+    float: right;
+    margin-right: 8px;
+}
+.nav_cont li:hover{
+    background: #045595;
+}
+.nav_cont li:hover i{
+    transition: all .3s ease-out 0s;
+    transform: rotate(90deg);
+}
+.nav_cont li ul{
+    width: 100px;
+    height: 100%;
+    position: absolute;
+    background: #f8f7f7;
+    left: 194px;
+    top: 0px;
+    display: none;
+    opacity: .8;
+} 
+.nav_cont li:hover ul{
+    display: block;
+}
+.nav_cont li:hover ul a{
+    color: #000;
+}
+.nav_cont li ul li{
+    transition: all .8s linear 0s;
+    background: #f8f7f7;
+}
+.nav_cont li ul li:hover{
+    color: #fff;
+    transition: all .8s linear 0s;
+    background: #2b81d3;
+}
+
+/* 轮播图 */
+/* #abanner{
+    height: 510px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+#abanner_img{
+    widows: 100%;
+    height: 510px;
+    position:absolute;
+    top:0;
+    left:0;
+} */
+/* #banner_img li{
+    widows: 100%;
+    height: 510px;
+    display: block;
+    background-position: center;
+    background-repeat: no-repeat;
+} */
+/* #abanner_list{
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+}
+#abanner_list li {
+    display: block;
+    float: left;
+    width: 8px;
+    height: 8px;
+    margin: 0 5px;
+    border-radius: 50%;
+    border: 2px solid #555;
+    cursor: pointer;
+}
+    
+#abanner_list li.current {
+    border: 2px solid #2e8ae4;
+    background: #2e8ae4;
+    box-shadow: 0 0 0 4px rgba(46,138,228,.3);
+    width: 8px;
+    height: 8px;
+}
+
+#abanner:hover #toLeft, #abanner:hover #toRight {
+    opacity: .7;
+}
+#toLeft {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    margin-top: -45px;
+    text-align: center;
+    transition: all .5s;
+    opacity: 0;
+}
+
+#toRight {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    margin-top: -45px;
+    text-align: center;
+    transition: all .5s;
+    opacity: 0;
+}
+
+#toLeft:hover, #toRight:hover {
+    background: rgba(0,0,0,.8);
+}
+
+#toLeft, #toRight {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(0,0,0,.3);
+}
+
+#toRight img, #toLeft img {
+    margin-top: 20px;
+    width: 12px;
+}
+
+#toLeft img {
+    margin-left: -4px;
+}
+
+#toRight img {
+    margin-left: 4px;
+} */
+
+/*banner start*/
+.banner_wrap {
+    width: 100%;
+    height: 510px;
+    font-size: 0;
+    overflow: hidden;
+    position: relative;
+    /*top: 166px;*/
+}
+
+.banner_img {
+    width: 100%;
+    height: 510px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+    .banner_img li {
+        width: 100%;
+        height: 510px;
+        display: inline-block;
+        background-position: center;
+        background-repeat: no-repeat;
+        list-style: none;
+    }
+
+.banner_list {
+    height: 50px;
+    top: 470px;
+    position: relative;
+    margin: 0 auto;
+    z-index: 1;
+}
+
+    .banner_list span {
+        display: block;
+        cursor: pointer;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        border: 2px solid #555;
+        float: left;
+        margin: 0 5px;
+    }
+
+    .banner_list .spcss {
+        border: 2px solid #2e8ae4;
+        background: #2e8ae4;
+        box-shadow: 0 0 0 4px rgba(46,138,228,.3);
+        width: 8px;
+        height: 8px;
+    }
+
+.banner_wrap:hover .banner_left, .banner_wrap:hover .banner_right {
+    opacity: .7;
+}
+
+.banner_left {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    margin-top: -45px;
+    text-align: center;
+    transition: all .5s;
+    z-index: 2;
+    opacity: 0;
+}
+
+.banner_right {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    margin-top: -45px;
+    text-align: center;
+    transition: all .5s;
+    z-index: 2;
+    opacity: 0;
+}
+
+    .banner_left:hover, .banner_right:hover {
+        background: rgba(0,0,0,.8);
+    }
+
+.banner_left, .banner_right {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(0,0,0,.3);
+}
+
+    .banner_left img, .banner_right img {
+        margin-top: 20px;
+        width: 12px;
+    }
+
+    .banner_left img {
+        margin-left: -4px;
+    }
+
+    .banner_right img {
+        margin-left: 4px;
+    }
+/*banner end*/
+
+
+
+/* recommend商品图片列表 */
+.seeMore{
+    float: right;  
+}
+.seeMore:hover a{
+    color: #2e8ae4;     
+}
+.recomm{
+    font-size: 24px;
+    margin-bottom: 22px;
+    color: #000;
+}
+#recommend{
+    height: 430px;
+    padding-top: 64px;
+}
+.list_cont{
+    width: 230px;
+    height: 320px;
+    background: #fff;
+    float: left;
+    margin: 0 5px;
+    position: relative;
+    overflow: hidden;
+}
+.list_pro{
+    width: 230px;
+    height: 200px; 
+    padding-top: 20px;
+}
+.list_cont img{
+    width: 100%;
+}
+.hot{
+    width: 60px;
+    height: 54px;
+    position: absolute;
+    top: 0;
+    right: 10px;
+}
+.list_bottom{
+    margin-left: 20px;
+}
+.list_cont h5{
+    font-size: 16px;
+    margin: 12px 0 8px 0;
+}
+.list_cont:hover h5 a{
+    color: #2e8ae4;
+}
+.price{
+    color: #2e8ae4;
+    font-size: 16px;
+    margin-top: 10px;
+}
+.list_cont:hover{
+    box-shadow: 0 0 25px -2px rgba(0, 0, 0, .2);
+}
+.list_hover{
+    height: 68px;
+    width: 100%;
+    background: linear-gradient(to right,#18ebe2,#3084e5);
+    position: absolute;
+    bottom: -68px;
+    left: 0;
+    display: block;
+}
+.list_cont:hover .list_hover{
+    transition: all .4s linear 0s;
+    bottom: 0;
+}
+.hover_price{
+    height: 68px;
+    line-height: 68px;
+    float: left;
+    font-size: 16px;
+    margin-left: 20px;
+    color: #fff;
+}
+.shop_cart{
+    float: left;
+    margin: 19px 0 0 10px;
+    height: 30px;
+    width: 110px;
+    line-height: 30px;
+    text-align: center;
+    background: linear-gradient(to right,#ff29a7, #0060ff);
+    color: #fff;
+    border-radius: 50px;
 }
