@@ -227,9 +227,8 @@
     margin-bottom: 22px;
     color: #000;
 }
-#recommend{
+.recommend{
     height: 430px;
-    padding-top: 64px;
 }
 .list_cont{
     width: 230px;
@@ -240,12 +239,24 @@
     position: relative;
     overflow: hidden;
 }
+.list_cont_two{
+    width: 470px;
+    height: 320px;
+    background: #fff;
+    float: left;
+    margin: 0 5px;
+    position: relative;
+    overflow: hidden; 
+}
 .list_pro{
-    width: 230px;
     height: 200px; 
     padding-top: 20px;
 }
-.list_cont img{
+.list_cont_two .list_pro{ 
+    height: 240px;
+    padding-top: 0;
+}
+.list_cont img,.list_cont_two img{
     width: 100%;
 }
 .hot{
@@ -258,9 +269,9 @@
 .list_bottom{
     margin-left: 20px;
 }
-.list_cont h5{
+.recommend h5{
     font-size: 16px;
-    margin: 12px 0 8px 0;
+    padding: 12px 0 8px 0;
 }
 .list_cont:hover h5 a{
     color: #2e8ae4;
@@ -270,7 +281,11 @@
     font-size: 16px;
     margin-top: 10px;
 }
-.list_cont:hover{
+.list_cont_two .price{
+    float: right;
+    margin-right: 20px;
+}
+.list_cont:hover,.list_cont_two:hover{
     box-shadow: 0 0 25px -2px rgba(0, 0, 0, .2);
 }
 .list_hover{
@@ -282,21 +297,35 @@
     left: 0;
     display: block;
 }
-.list_cont:hover .list_hover{
+.list_cont_two .list_hover{
+    height: 84px;
+    width: 100%;
+    background: linear-gradient(to right,#18ebe2,#3084e5);
+    position: absolute;
+    bottom: -84px;
+    left: 0;
+    display: block;
+}
+.list_cont:hover .list_hover,.list_cont_two:hover .list_hover{
     transition: all .4s linear 0s;
     bottom: 0;
 }
 .hover_price{
-    height: 68px;
-    line-height: 68px;
+    height: 80px;
+    line-height: 80px;
     float: left;
     font-size: 16px;
     margin-left: 20px;
     color: #fff;
 }
+.list_cont_two .hover_price{
+    height: 84px;
+    line-height: 84px;
+    margin-left: 130px;
+}
 .shop_cart{
     float: left;
-    margin: 19px 0 0 10px;
+    margin: 20px 0 0 10px;
     height: 30px;
     width: 110px;
     line-height: 30px;
@@ -304,4 +333,7 @@
     background: linear-gradient(to right,#ff29a7, #0060ff);
     color: #fff;
     border-radius: 50px;
+}
+.list_cont_two .shop_cart{
+    margin: 24px 0 0 10px;
 }
