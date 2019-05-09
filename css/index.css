@@ -106,97 +106,6 @@
 }
 
 /* 轮播图 */
-/* #abanner{
-    height: 510px;
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-}
-#abanner_img{
-    widows: 100%;
-    height: 510px;
-    position:absolute;
-    top:0;
-    left:0;
-} */
-/* #banner_img li{
-    widows: 100%;
-    height: 510px;
-    display: block;
-    background-position: center;
-    background-repeat: no-repeat;
-} */
-/* #abanner_list{
-    height: 50px;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-}
-#abanner_list li {
-    display: block;
-    float: left;
-    width: 8px;
-    height: 8px;
-    margin: 0 5px;
-    border-radius: 50%;
-    border: 2px solid #555;
-    cursor: pointer;
-}
-    
-#abanner_list li.current {
-    border: 2px solid #2e8ae4;
-    background: #2e8ae4;
-    box-shadow: 0 0 0 4px rgba(46,138,228,.3);
-    width: 8px;
-    height: 8px;
-}
-
-#abanner:hover #toLeft, #abanner:hover #toRight {
-    opacity: .7;
-}
-#toLeft {
-    position: absolute;
-    top: 50%;
-    left: 20px;
-    margin-top: -45px;
-    text-align: center;
-    transition: all .5s;
-    opacity: 0;
-}
-
-#toRight {
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    margin-top: -45px;
-    text-align: center;
-    transition: all .5s;
-    opacity: 0;
-}
-
-#toLeft:hover, #toRight:hover {
-    background: rgba(0,0,0,.8);
-}
-
-#toLeft, #toRight {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: rgba(0,0,0,.3);
-}
-
-#toRight img, #toLeft img {
-    margin-top: 20px;
-    width: 12px;
-}
-
-#toLeft img {
-    margin-left: -4px;
-}
-
-#toRight img {
-    margin-left: 4px;
-} */
 
 /*banner start*/
 .banner_wrap {
@@ -222,6 +131,7 @@
         display: inline-block;
         background-position: center;
         background-repeat: no-repeat;
+        float: left;
         list-style: none;
     }
 
