@@ -76,30 +76,37 @@ if (disY < 0) {
 //         });
 // })
 $(function(){
-    $("#showsum>p>span>img").hover(
-        function () {
-            $(this).addClass("bsr");
-        },
-        function () {
-            $(this).removeClass("bsr");
-        }
-        );
+    
 })
 
 //bigpic
 //showsum span
+//商品详情-鼠标滑过-加一个类
 //商品详情-鼠标滑过—换图功能
 $(function () {
     //1. 给所有的a注册点击事件
     
     
-    $("#showsum img").hover(function () {
-      var src = $(this).attr("src");
+    // $(".sp").hover(
+    //     function () {
+    //         console.log('1');
+    //         $(this).addClass("bsr");
+    //     },
+    //     function () {
+    //         console.log('2');
+    //         $(this).removeClass("bsr");
+    //     }
+    // );
+
+
+    $("#showsum .sp").hover(function () {
+     $(this).addClass("bsr").siblings().removeClass("bsr");
+      var src = $(this).find('img').attr("src");
       $("#bigpic img").attr("src", src);
       $("#showbox img").attr("src", src);
-      var title = $(this).attr("title");
-     
-      
+      var title = $(this).find('img').attr("title");
       return false;
     });
+
+    
   });
