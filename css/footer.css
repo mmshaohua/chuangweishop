@@ -1,15 +1,4 @@
 @charset "utf-8";
-/* CSS Document */
-body,h1,h2,h3,h4,h5,h6,p,img,ol,ul,li,dl,dt,dd,th,td,form,fieldset,legend,input,
-textarea,select{margin:0; padding:0;}
-a{text-decoration:none;}
-a:hover{text-decoration: none;}
-ul li,ol li{list-style:none;}
-fieldset,img{ border:none; }
-em,i{font-style:normal}
-b,strong{font-weight:normal}
-.clearfix:after{content:""; display:block; font-size:0; height:0; overflow:hidden;
-visibility:hidden;}
 
 .main{
     width: 1210px; 

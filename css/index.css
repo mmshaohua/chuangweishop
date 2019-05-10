@@ -3,10 +3,8 @@
     margin: auto;
     color: #999;
 }
-#header{
-    width: 100%;
-    height: 132px;
-    background: #fff;
+body{
+    color: #999;
 }
 
 /* 导航栏 */
@@ -33,6 +31,7 @@
     float: left;
     height: 36px;
     background: #fff;
+    border-bottom: 1px solid #2e8ae4;
 }
 .nav_ul li{
     float: left;
@@ -74,6 +73,9 @@
 }
 .nav_cont li:hover{
     background: #045595;
+}
+.nav_cont li:hover a{
+    color: #fff;
 }
 .nav_cont li:hover i{
     transition: all .3s ease-out 0s;
@@ -256,9 +258,14 @@
     height: 240px;
     padding-top: 0;
 }
-.list_cont img,.list_cont_two img{
+.list_cont .list_pro img{
+    width: 190px;
+    margin-left: 20px;
+}
+.hot img,.list_cont_two img{
     width: 100%;
 }
+
 .hot{
     width: 60px;
     height: 54px;
@@ -268,6 +275,7 @@
 }
 .list_bottom{
     margin-left: 20px;
+    margin-top: 20px;
 }
 .recommend h5{
     font-size: 16px;
@@ -312,7 +320,7 @@
 }
 .hover_price{
     height: 80px;
-    line-height: 80px;
+    line-height: 72px;
     float: left;
     font-size: 16px;
     margin-left: 20px;
@@ -320,7 +328,7 @@
 }
 .list_cont_two .hover_price{
     height: 84px;
-    line-height: 84px;
+    line-height: 76px;
     margin-left: 130px;
 }
 .shop_cart{
@@ -331,8 +339,11 @@
     line-height: 30px;
     text-align: center;
     background: linear-gradient(to right,#ff29a7, #0060ff);
-    color: #fff;
+    
     border-radius: 50px;
+}
+.shop_cart a{
+   color: #fff; 
 }
 .list_cont_two .shop_cart{
     margin: 24px 0 0 10px;

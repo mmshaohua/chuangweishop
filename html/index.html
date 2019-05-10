@@ -5,14 +5,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>创维官方商城</title>
-    <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../public/style.css">
-    <link rel="stylesheet" href="../public/iconfont/iconfont.css">
+    <link type="text/css" rel="stylesheet" href="../public/iconfont/iconfont.css">
+    <link type="text/css" rel="stylesheet" href="../public/css/bootstrap.css">
+    <link type="text/css" rel="stylesheet" href="../public/style.css">
+    <link type="text/css" rel="stylesheet" href="../css/head.css">
+    <link type="text/css" rel="stylesheet" href="../css/footer.css">
+    <link type="text/css" rel="stylesheet" href="../css/index.css">
     <script src="../js/jquery.min.js"></script>
     <script src="../js/index.js"></script>
 </head>
 <body>
-    <div id="header"></div>
+    <!-- 头部 -->
+    <div class="header">
+        <div class="head">
+            <div class="head_left">
+                <div class="head_position">
+                    <div class="head_welcome">
+                        欢迎您,来到创维官网商城
+                    </div>
+                </div>
+            </div>
+            <div class="head_right">
+                <ul>
+                    <li><a href="./login.html">登录</a></li>
+                    <li><a href="./loginReg.html">注册</a></li>
+                    <li><a href="./login.html">我的订单</a></li>
+                    <li class="top_li_wrap"><a href="#">手机端</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="top_wrap">
+       <div class="top_content">
+            <div class="logo">
+                <a href="#" target="_blank">
+                    <img src="../images/sky_logo.png">
+                </a>
+            </div>
+
+            <div class="top_right">
+                <div class="top_search">
+                    <div class="top_search_input">
+                        <input type="text" placeholder="输入条件" class="search_text">
+                        <i class="glyphicon glyphicon-search"></i>
+                        <input type="button" class="search_button">
+                    </div>
+                    <div class="top_search_lable">
+                        <a href="#">OlED</a>
+                        <a href="#">超博</a>
+                        <a href="#">4k超清</a>
+                        <a href="#">全面屏</a>
+                        <a href="#">防蓝光护眼</a>
+                        <a href="#">大屏</a>
+                        <a href="#">智能网络</a>
+                    </div>
+                </div>
+                <div class="top_searve">
+                    <dl class="shopcare_hover">
+                        <dt>
+                            <i class="glyphicon glyphicon-shopping-cart"></i>
+                            <a href="#">我的购物车</a>
+                        </dt>
+                        <dd>
+                            <div class="font_number">0</div>
+                        </dd>
+                    </dl>
+                    <div class="shopcare_list">
+                        <p>
+                            购物车列表
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </p>
+                        <div class="shopcare_botton">
+                            <span>
+                                共<b>0</b>件商品
+                            </span>
+                            <span>
+                                共计<b>¥ 0</b>
+                            </span>
+                            <button type="button" class="btn btn-danger">去购物车</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       </div>
+    </div>
 
     <!-- 导航栏 -->
     <div id="nav">
@@ -125,10 +202,10 @@
                 
     <!--ID:html_Img执行事件：0-->
 
-                <a href="#" target="_blank" title=""><li><img src="../images/20193235040H5.jpg" /></li></a>
-                <a href="#" target="_blank" title=""><li><img src="../images/2019310302.jpg" /></li></a>
-                <a href="#" target="_blank" title=""><li><img src="../images/201931029Live2PC.jpg" /></li></a>
-                <a href="#" target="_blank" title=""><li><img src="../images/2019310294.jpg" /></li></a>
+                <a href="./goods.html" target="_blank" title=""><li><img src="../images/20193235040H5.jpg" /></li></a>
+                <a href="./goods.html" target="_blank" title=""><li><img src="../images/2019310302.jpg" /></li></a>
+                <a href="./goods.html" target="_blank" title=""><li><img src="../images/201931029Live2PC.jpg" /></li></a>
+                <a href="./goods.html" target="_blank" title=""><li><img src="../images/2019310294.jpg" /></li></a>
   
             </ul>
         </div>
@@ -421,6 +498,27 @@
         </div>
 
     <!-- 底部 -->
-    <div id="footer"></div>
+    <div class="footer">
+        <div class="main">
+            <ul>
+                <li>支付方式</li>
+                <li><a href="#">微信支付</a></li>
+                <li><a href="#">支付宝</a></li>
+            </ul>
+            <ul>
+                <li>售后服务</li>
+                <li><a href="#">增值税专营</a></li>
+                <li><a href="#">发票无忧</a></li>
+                <li><a href="#">安装维修</a></li>
+                <li><a href="#">验货提醒</a></li>
+            </ul>
+            <ul>
+                <li>400-866-5555</li>
+                <li>周一至周日 7:00 - 23:00</li>
+                <span class="glyphicon glyphicon-phone-alt"></span>
+                <input type="button" value="在线客服" class="footer_button">
+            </ul>
+        </div>
+    </div>
 </body>
 </html>
