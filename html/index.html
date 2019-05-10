@@ -8,71 +8,420 @@
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../public/style.css">
     <link rel="stylesheet" href="../public/iconfont/iconfont.css">
-    <script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+    <script src="../js/jquery.min.js"></script>
     <script src="../js/index.js"></script>
 </head>
 <body>
     <div id="header"></div>
+
     <div id="nav">
         <div class="main">
-            <div class="nav_a">
-                <a href="#"><i class="iconfont">&#xe614;</i>商品分类</a>
-            </div>
-            <ul class="nav_ul">
-                <li><a href="#">首页</a></li>
-                <li><a href="#">服务</a></li>
-                <li><a href="#">创维集团</a></li>
-                <li><a href="#">爱内购</a></li>
-            </ul>
-        </div>
-    </div>    
-    <div id="banner">
-        <div class="main">
-            <ul class="nav_wrap">
-                <li class="all_nav">
+            <ul>
+                <div class="nav_a">
+                    <a href="#"><i class="iconfont">&#xe614;</i>商品分类</a>
+                </div>
+                <li class="nav_menu"> 
                     <ul class="nav_cont">
                         <li>
                             <a href="#">电视<i class="iconfont">&#xe616;</i></a>
+                            <ul >
+                                <li><a href="#">OLED</a></li>
+                                <li><a href="#">全面屏</a></li>
+                                <li><a href="#">防蓝光</a></li>
+                                <li><a href="#">AI智能</a></li>
+                                <li><a href="#">4K超清</a></li>
+                                <li><a href="#">智能网络</a></li>
+                                <li><a href="#">普通电视</a></li>
+                            </ul>
                         </li>
                         <li>
                             <a href="#">盒子/投影仪<i class="iconfont">&#xe616;</i></a>
+                            <ul>
+                                <li><a href="#">企鹅极光</a></li>
+                                <li><a href="#">T系</a></li>
+                                <li><a href="#">π系</a></li>
+                            </ul>
                         </li>
                         <li>
                             <a href="#">灯饰<i class="iconfont">&#xe616;</i></a>
+                            <ul>
+                                <li><a href="#">L1系列</a></li>
+                            </ul>
                         </li>
                         <li>
                             <a href="#">冰箱<i class="iconfont">&#xe616;</i></a>
+                            <ul>
+                                <li><a href="#">风冷</a></li>
+                                <li><a href="#">直冷</a></li>
+                            </ul>
                         </li>
                         <li>
                             <a href="#">洗衣机<i class="iconfont">&#xe616;</i></a>
+                            <ul>
+                                <li><a href="#">滚筒</a></li>
+                                <li><a href="#">波轮</a></li>
+                            </ul>
                         </li>
                         <li>
                             <a href="#">净水器<i class="iconfont">&#xe616;</i></a>
+                            <ul>
+                                <li><a href="#">前置过滤</a></li>
+                                <li><a href="#">直饮</a></li>
+                            </ul>
                         </li>
                         <li>
                             <a href="#">空调<i class="iconfont">&#xe616;</i></a>
+                            <ul>
+                                <li><a href="#">立柜式</a></li>
+                                <li><a href="#">壁挂式</a></li>
+                            </ul>
                         </li>
                         <li>
                             <a href="#">音响<i class="iconfont">&#xe616;</i></a>
+                            <ul></ul>
                         </li>
                         <li>
                             <a href="#">显示器<i class="iconfont">&#xe616;</i></a>
+                            <ul></ul>
                         </li>
                         <li>
                             <a href="#">智能锁<i class="iconfont">&#xe616;</i></a>
+                            <ul></ul>
                         </li>
                         <li>
                             <a href="#">商务机<i class="iconfont">&#xe616;</i></a>
+                            <ul>
+                                <li><a href="#">E388G系列</a></li>
+                                <li><a href="#">E382W系列</a></li>
+                                <li><a href="#">E381S系列</a></li>
+                            </ul>
                         </li>
                     </ul>
                 </li>
-            </ul> 
+                <li>
+                    <ul class="nav_ul">
+                        <li><a href="#">首页</a></li>
+                        <li><a href="#">服务</a></li>
+                        <li><a href="#">创维集团</a></li>
+                        <li><a href="#">爱内购</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- <div id="abanner">
+        <ul id="abanner_img">
+            <li style="z-index: 4;"><a href="#"><img src="../images/2019310294.jpg" alt=""></a></li>
+            <li style="z-index: 3;"><a href="#"><img src="../images/201931029Live2PC.jpg" alt=""></a></li>
+            <li style="z-index: 2;"><a href="#"><img src="../images/2019310302.jpg" alt=""></a></li>
+            <li style="z-index: 1;"><a href="#"><img src="../images/20193235040H5.jpg" alt=""></a></li>
+        </ul>
+        <div id="toLeft" style="z-index: 10;"><img src="../images/left.png" alt=""></div>
+        <div id="toRight" style="z-index: 10;"><img src="../images/right.png" alt=""></div>
+        <ol id="abanner_list" style="z-index: 10;">
+            <li class="current"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ol>
+    </div> -->
+    <div class="banner_wrap">
+        <div class="banner_bg">
+            <div class="banner_list"></div>
+            <div class="banner_left">
+                <img src="../images/left.png">
+            </div>
+            <div class="banner_right">
+                <img src="../images/right.png">
+            </div>
+            <ul class="banner_img">
+                
+    <!--ID:html_Img执行事件：0-->
+
+                <a href="#" target="_blank" title=""><li><img src="../images/2019310294.jpg" /></li></a>
+            
+                <a href="#" target="_blank" title=""><li><img src="../images/201931029Live2PC.jpg" /></li></a>
+            
+                <a href="#" target="_blank" title=""><li><img src="../images/2019310302.jpg" /></li></a>
+            
+                <a href="#" target="_blank" title=""><li><img src="../images/20193235040H5.jpg" /></li></a>
+                    
+            </ul>
         </div>
     </div>
     
+
+    <div class="recommend" style="margin-top: 64px;">
+        <div class="main">
+            <div  class="main_wrap clearfix">
+                <div class="seeMore"><a href="#">查看更多<i class="iconfont">&#xe616;</i></a></div>
+                <div class="recomm">热情推荐</div>
+
+                <div class="list_cont">
+                    <div class="list_pro"><a href="./goods.html" target="_blank"><img src="../images/201903200227002228.jpg"></a></div>
+                    <div class="list_bottom">
+                        <h5><a href="./goods.html" target="_blank">55H20(送智能音箱)</a></h5>
+                        <p>55寸|2+32G | 极光幻彩淅变色 | </p>
+                        <div class="price">￥3799.00</div>
+                    </div>
+                    <div class="hot"><i><img src="../images/imageTag3.png" /></i></div>
+                    <div class="list_hover">
+                        <span class="hover_price">￥3799.00</span>
+                        <span class="shop_cart"><a href="./goods.html" target="_blank">加入购物车</a></span>
+                    </div>
+                </div>
+
+                <div class="list_cont">
+                    <div class="list_pro"><a href="./goods.html" target="_blank"><img src="../images/201811300230555740.jpg"></a></div>
+                    <div class="list_bottom">
+                        <h5><a href="./goods.html" target="_blank">55H20(送智能音箱)</a></h5>
+                        <p>55寸|2+32G | 极光幻彩淅变色 | </p>
+                        <div class="price">￥3799.00</div>
+                    </div>
+                    <div class="hot"><i><img src="../images/imageTag4.png" /></i></div>
+                    <div class="list_hover">
+                        <span class="hover_price">￥3799.00</span>
+                        <span class="shop_cart"><a href="./goods.html"  target="_blank">加入购物车</a></span>
+                    </div>
+                </div>
+
+                <div class="list_cont">
+                    <div class="list_pro"><a href="./goods.html" target="_blank"><img src="../images/201808070450359166.jpg"></a></div>
+                    <div class="list_bottom">
+                        <h5><a href="./goods.html" target="_blank">55H20(送智能音箱)</a></h5>
+                        <p>55寸|2+32G | 极光幻彩淅变色 | </p>
+                        <div class="price">￥3799.00</div>
+                    </div>
+                    <div class="hot"><i><img src="../images/imageTag4.png" /></i></div>
+                    <div class="list_hover">
+                        <span class="hover_price">￥3799.00</span>
+                        <span class="shop_cart"><a href="./goods.html"  target="_blank">加入购物车</a></span>
+                    </div>
+                </div>
+
+                <div class="list_cont">
+                    <div class="list_pro"><a href="./goods.html" target="_blank"><img src="../images/201808070640533972.jpg"></a></div>
+                    <div class="list_bottom">
+                        <h5><a href="./goods.html" target="_blank">55H20(送智能音箱)</a></h5>
+                        <p>55寸|2+32G | 极光幻彩淅变色 | </p>
+                        <div class="price">￥3799.00</div>
+                    </div>
+                    <div class="list_hover">
+                        <span class="hover_price">￥3799.00</span>
+                        <span class="shop_cart"><a href="./goods.html"  target="_blank">加入购物车</a></span>
+                    </div>
+                </div>
+
+                <div class="list_cont">
+                    <div class="list_pro"><a href="./goods.html" target="_blank"><img src="../images/201808081023574820.jpg"></a></div>
+                    <div class="list_bottom">
+                        <h5><a href="./goods.html" target="_blank">55H20(送智能音箱)</a></h5>
+                        <p>55寸|2+32G | 极光幻彩淅变色 | </p>
+                        <div class="price">￥3799.00</div>
+                    </div>
+                    <div class="list_hover">
+                        <span class="hover_price">￥3799.00</span>
+                        <span class="shop_cart"><a href="./goods.html"  target="_blank">加入购物车</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="recommend">
+        <div class="main">
+            <div  class="main_wrap clearfix">
+                <div class="seeMore"><a href="#">查看更多<i class="iconfont">&#xe616;</i></a></div>
+                <div class="recomm">电视</div>
+
+                <div class="list_cont_two">
+                    <div class="list_pro"><a href="./goods.html" target="_blank"><img src="../images/201811020357204033.jpg"></a></div>
+                    <div class="list_bottom">
+                        <div class="price">￥3799.00</div>
+                        <h5><a href="./goods.html" target="_blank">55H20(送智能音箱)</a></h5>
+                        <p>55寸|2+32G | 极光幻彩淅变色 | </p>
+                        
+                    </div>
+                    <div class="hot"><i><img src="../images/imageTag1.png" /></i></div>
+                    <div class="list_hover">
+                        <span class="hover_price">￥3799.00</span>
+                        <span class="shop_cart"><a href="./goods.html" target="_blank">加入购物车</a></span>
+                    </div>
+                </div>
+
+                <div class="list_cont">
+                    <div class="list_pro"><a href="./goods.html" target="_blank"><img src="../images/201811300230555740.jpg"></a></div>
+                    <div class="list_bottom">
+                        <h5><a href="./goods.html" target="_blank">55H20(送智能音箱)</a></h5>
+                        <p>55寸|2+32G | 极光幻彩淅变色 | </p>
+                        <div class="price">￥3799.00</div>
+                    </div>
+                    <div class="list_hover">
+                        <span class="hover_price">￥3799.00</span>
+                        <span class="shop_cart"><a href="./goods.html"  target="_blank">加入购物车</a></span>
+                    </div>
+                </div>
+
+                <div class="list_cont">
+                    <div class="list_pro"><a href="./goods.html" target="_blank"><img src="../images/201808070450359166.jpg"></a></div>
+                    <div class="list_bottom">
+                        <h5><a href="./goods.html" target="_blank">55H20(送智能音箱)</a></h5>
+                        <p>55寸|2+32G | 极光幻彩淅变色 | </p>
+                        <div class="price">￥3799.00</div>
+                    </div>
+                    <div class="list_hover">
+                        <span class="hover_price">￥3799.00</span>
+                        <span class="shop_cart"><a href="./goods.html"  target="_blank">加入购物车</a></span>
+                    </div>
+                </div>
+
+                <div class="list_cont">
+                    <div class="list_pro"><a href="./goods.html" target="_blank"><img src="../images/201808070640533972.jpg"></a></div>
+                    <div class="list_bottom">
+                        <h5><a href="./goods.html" target="_blank">55H20(送智能音箱)</a></h5>
+                        <p>55寸|2+32G | 极光幻彩淅变色 | </p>
+                        <div class="price">￥3799.00</div>
+                    </div>
+                    <div class="list_hover">
+                        <span class="hover_price">￥3799.00</span>
+                        <span class="shop_cart"><a href="./goods.html"  target="_blank">加入购物车</a></span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="recommend">
+            <div class="main">
+                <div  class="main_wrap clearfix">
+                    <div class="seeMore"><a href="#">查看更多<i class="iconfont">&#xe616;</i></a></div>
+                    <div class="recomm">盒子/投影仪</div>
+    
+                    <div class="list_cont_two">
+                        <div class="list_pro"><a href="./goods.html" target="_blank"><img src="../images/201809130332542878.jpg"></a></div>
+                        <div class="list_bottom">
+                            <div class="price">￥3799.00</div>
+                            <h5><a href="./goods.html" target="_blank">55H20(送智能音箱)</a></h5>
+                            <p>55寸|2+32G | 极光幻彩淅变色 | </p>
+                            
+                        </div>
+                        <div class="list_hover">
+                            <span class="hover_price">￥3799.00</span>
+                            <span class="shop_cart"><a href="./goods.html" target="_blank">加入购物车</a></span>
+                        </div>
+                    </div>
+    
+                    <div class="list_cont">
+                        <div class="list_pro"><a href="./goods.html" target="_blank"><img src="../images/201811300230555740.jpg"></a></div>
+                        <div class="list_bottom">
+                            <h5><a href="./goods.html" target="_blank">55H20(送智能音箱)</a></h5>
+                            <p>55寸|2+32G | 极光幻彩淅变色 | </p>
+                            <div class="price">￥3799.00</div>
+                        </div>
+                        <div class="list_hover">
+                            <span class="hover_price">￥3799.00</span>
+                            <span class="shop_cart"><a href="./goods.html"  target="_blank">加入购物车</a></span>
+                        </div>
+                    </div>
+    
+                    <div class="list_cont">
+                        <div class="list_pro"><a href="./goods.html" target="_blank"><img src="../images/201808070450359166.jpg"></a></div>
+                        <div class="list_bottom">
+                            <h5><a href="./goods.html" target="_blank">55H20(送智能音箱)</a></h5>
+                            <p>55寸|2+32G | 极光幻彩淅变色 | </p>
+                            <div class="price">￥3799.00</div>
+                        </div>
+                        <div class="list_hover">
+                            <span class="hover_price">￥3799.00</span>
+                            <span class="shop_cart"><a href="./goods.html"  target="_blank">加入购物车</a></span>
+                        </div>
+                    </div>
+    
+                    <div class="list_cont">
+                        <div class="list_pro"><a href="./goods.html" target="_blank"><img src="../images/201808070640533972.jpg"></a></div>
+                        <div class="list_bottom">
+                            <h5><a href="./goods.html" target="_blank">55H20(送智能音箱)</a></h5>
+                            <p>55寸|2+32G | 极光幻彩淅变色 | </p>
+                            <div class="price">￥3799.00</div>
+                        </div>
+                        <div class="list_hover">
+                            <span class="hover_price">￥3799.00</span>
+                            <span class="shop_cart"><a href="./goods.html"  target="_blank">加入购物车</a></span>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+    </div>
+
+    <div class="recommend">
+        <div class="main">
+            <div  class="main_wrap clearfix">
+                <div class="seeMore"><a href="#">查看更多<i class="iconfont">&#xe616;</i></a></div>
+                <div class="recomm">灯饰</div>
+
+                <div class="list_cont_two">
+                    <div class="list_pro"><a href="./goods.html" target="_blank"><img src="../images/201903221106382444.jpg"></a></div>
+                    <div class="list_bottom">
+                        <div class="price">￥3799.00</div>
+                        <h5><a href="./goods.html" target="_blank">55H20(送智能音箱)</a></h5>
+                        <p>55寸|2+32G | 极光幻彩淅变色 | </p>
+                        
+                    </div>
+                    <div class="list_hover">
+                        <span class="hover_price">￥3799.00</span>
+                        <span class="shop_cart"><a href="./goods.html" target="_blank">加入购物车</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<<<<<<< HEAD
+    
     <div id="recommend"></div>
     <div id="television"></div>
+=======
+
+    <div class="recommend">
+            <div class="main">
+                <div  class="main_wrap clearfix">
+                    <div class="seeMore"><a href="#">查看更多<i class="iconfont">&#xe616;</i></a></div>
+                    <div class="recomm">冰箱</div>
+    
+                    <div class="list_cont_two">
+                        <div class="list_pro"><a href="./goods.html" target="_blank"><img src="../images/201807260435017392.jpg"></a></div>
+                        <div class="list_bottom">
+                            <div class="price">￥3799.00</div>
+                            <h5><a href="./goods.html" target="_blank">55H20(送智能音箱)</a></h5>
+                            <p>55寸|2+32G | 极光幻彩淅变色 | </p>
+                            
+                        </div>
+                        <div class="list_hover">
+                            <span class="hover_price">￥3799.00</span>
+                            <span class="shop_cart"><a href="./goods.html" target="_blank">加入购物车</a></span>
+                        </div>
+                    </div>
+    
+                    <div class="list_cont">
+                        <div class="list_pro"><a href="./goods.html" target="_blank"><img src="../images/201811300230555740.jpg"></a></div>
+                        <div class="list_bottom">
+                            <h5><a href="./goods.html" target="_blank">55H20(送智能音箱)</a></h5>
+                            <p>55寸|2+32G | 极光幻彩淅变色 | </p>
+                            <div class="price">￥3799.00</div>
+                        </div>
+                        <div class="list_hover">
+                            <span class="hover_price">￥3799.00</span>
+                            <span class="shop_cart"><a href="./goods.html"  target="_blank">加入购物车</a></span>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+
+>>>>>>> master
     <div id="footer"></div>
-    <div id="copyright"></div>
 </body>
 </html>
