@@ -17,11 +17,15 @@
    
 }
 .logo{
-   width: 266px;
-   height: auto;
-   margin-top:35px; 
+    width: 266px;
+    height: auto;
+    /* margin-top: 35px;  */
 }
-
+.login-left a img{
+    width: 266px;
+    height: auto;
+    margin-top: 35px;
+}
 .login-right{
     float: right;
     line-height: 100px;
@@ -107,4 +111,31 @@
     font-size:12px; 
     color: #333;
     
+}
+#changeImg{
+    text-decoration: none;
+}
+.login_footer {
+    width: 100%;
+    height: 100px;
+    background: #FFF;
+}
+.login_foot {
+    width: 1210px;
+    margin: 0 auto;
+    text-align: center;
+}
+.login_foot ul {
+    height: 20px;
+    padding: 30px 0 5px 0;
+    display: inline-block;
+}
+.login_foot ul li {
+    float: left;
+    padding: 0 5px;
+    color: #999;
+    \: center;
+}
+.login_foot p {
+    color: #999;
 }

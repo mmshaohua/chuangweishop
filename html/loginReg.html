@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../public/style.css">
+    
+    <link rel="stylesheet" href="../css/loginReg.css">
+    <script src="../public/jquery.js"></script>
+    <script src="../js/yzm.js"></script>
+    <title>Document</title>
+</head>
+<body>
+<header class="login_head">
+    <div class="login_top">
+        <div class="login_top_right">已有账号？ <a href="./login.html">请登录</a></div>
+        <div class="login_top_left">
+            <a href="./index.html">
+                <img src="../images/logo.png"></a>
+        </div>
+    </div>
+</header>      
+<div class="login_container">
+    <div class="regist_wrap ">
+        <div class="regis_content">
+            <div class="step-body" id="myStep">
+                <div class="step-header">
+                    <ul> 
+                        <li> <p>注册</p> </li>
+                    </ul>
+                </div>
+                <div class="step-content">
+                    <div class="step-list">
+                        <div class="input_block">
+                            <div class="step_input">
+                                <input type="text" id="yz" placeholder="请输入图形验证码" value="" class="login_input_ma ma_ter" />
+                                <span class="login_span ma_span">
+                                    <canvas id="myCanvas" style="width:70px;height:30px"></canvas>
+                                    <a href="javascript:void(0);" style="cursor: pointer;" id="changeImg">换一张</a>
+                                </span>
+                            </div>
+                            <div class="login_tip">请输入图形验证码。</div>
+                        </div>
+                        <div class="input_block">
+                            <div class="step_input">
+                                <input type="text" id="phone" placeholder="请输入手机号码" value="" class="login_input" />
+                            </div>
+                            <div class="login_tip">验证完成后，可以用此手机号进行登录和找回密码。</div>
+                        </div>
+                    </div>
+                    <div class="step-list">
+                        <div class="input_block">
+                            <div class="step_input">
+                                <input type="password" id="pwd" placeholder="请设置您的密码" class="login_input">
+                            </div>
+                            <div class="login_tip">建议使用两种或两种以上的字符设置密码</div>
+                        </div>
+                        <div class="input_block">
+                            <div class="step_input">
+                                <input type="password" id="cpwd" placeholder="请确认您的密码" class="login_input">
+                            </div>
+                            <div class="login_tip">请保持两次输入的密码一致</div>
+                        </div>
+                    </div>   
+                </div>
+            </div>
+            <div class="bot_btn">
+                <button class="step-next btn" id="btn" onclick="register()">注册成功</button>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="login_footer">
+    <div class="login_foot">
+        <ul>
+            <li>关于我们</li>
+            <li>|</li>
+            <li>联系我们</li>
+            <li>|</li>
+            <li>自助服务</li>
+            <li>|</li>
+            <li>友情链接</li>
+            <li>|</li>
+            <li>关注我们</li>
+            <li>|</li>
+            <li>购买流程</li>
+            <li>|</li>
+            <li>安装调试</li>
+            <li>|</li>
+            <li>税票制度</li>
+        </ul>
+        <p>ICP备案证号：粤ICP备09157852号</p>
+    </div>
+</footer>
+
+ <script>
+        // var usernamereg = /^1(3|4|5|7|8)\d{9}$/;
+        // var passwordreg = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,15}$/;
+    function register(){
+         var usernamereg = /^1(3|4|5|7|8)\d{9}$/;
+         var passwordreg = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,15}$/;
+         if(!usernamereg.test($("#phone").val())){
+             alert("号码输入有误，请检查！");
+             clear();
+         }else if(!passwordreg.test($("#pwd").val())){
+             alert("密码不符合要求，请检查！");
+             clear();
+         }else if(isNone()){
+             var arr = [];
+             if(localStorage.user){
+                 arr = eval(localStorage.user);
+                 for(e in arr){
+                     if($("#phone").val() == arr[e].loginName){
+                         alert("账号已注册！");
+                         clear();
+                         return;
+                     }
+                 }
+             }
+             var user = {
+                 'loginName':$("#phone").val(),
+                 'loginPsd':$("#pwd").val()
+             };
+             arr.push(user);
+             console.log($("#phone").val());
+             localStorage.user = JSON.stringify(arr);
+             alert("注册成功");
+             window.location.href = "login.html";
+             clear();
+         }
+     }
+     function clear(){
+         $("#yz").val("");
+         $("#phone").val("");
+         $("#pwd").val("");
+         $("#cpwd").val("");
+     }
+     function isNone(){
+         if($("#yz").val() ==""){
+             alert("请填写验证码！");
+         }else if($("#phone").val() == ""){
+            alert("电话号码不能为空");
+            return false;
+        }else if($("#pwd").val() == ""){
+            alert("密码不能为空");
+            return false;
+        }else if($("#pwd").val() != $("#cpwd").val()){
+            alert("两次密码不一致，请检查！");
+            return false;
+        }else{
+            return true;
+        }
+    }
+ </script>       
+</body>
+</html>
