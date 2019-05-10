@@ -12,6 +12,15 @@
     <title>Document</title>
 </head>
 <body>
+<header class="login_head">
+    <div class="login_top">
+        <div class="login_top_right">已有账号？ <a href="./login.html">请登录</a></div>
+        <div class="login_top_left">
+            <a href="./index.html">
+                <img src="../images/logo.png"></a>
+        </div>
+    </div>
+</header>      
 <div class="login_container">
     <div class="regist_wrap ">
         <div class="regis_content">
@@ -57,15 +66,47 @@
                 </div>
             </div>
             <div class="bot_btn">
-                <button class="step-next btn" onclick="register()">注册成功</button>
+                <button class="step-next btn" id="btn" onclick="register()">注册成功</button>
             </div>
         </div>
     </div>
 </div>
+<footer class="login_footer">
+    <div class="login_foot">
+        <ul>
+            <li>关于我们</li>
+            <li>|</li>
+            <li>联系我们</li>
+            <li>|</li>
+            <li>自助服务</li>
+            <li>|</li>
+            <li>友情链接</li>
+            <li>|</li>
+            <li>关注我们</li>
+            <li>|</li>
+            <li>购买流程</li>
+            <li>|</li>
+            <li>安装调试</li>
+            <li>|</li>
+            <li>税票制度</li>
+        </ul>
+        <p>ICP备案证号：粤ICP备09157852号</p>
+    </div>
+</footer>
+
  <script>
+        // var usernamereg = /^1(3|4|5|7|8)\d{9}$/;
+        // var passwordreg = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,15}$/;
     function register(){
-         //alert("1");
-         if(isNone()){
+         var usernamereg = /^1(3|4|5|7|8)\d{9}$/;
+         var passwordreg = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,15}$/;
+         if(!usernamereg.test($("#phone").val())){
+             alert("号码输入有误，请检查！");
+             clear();
+         }else if(!passwordreg.test($("#pwd").val())){
+             alert("密码不符合要求，请检查！");
+             clear();
+         }else if(isNone()){
              var arr = [];
              if(localStorage.user){
                  arr = eval(localStorage.user);
@@ -96,7 +137,9 @@
          $("#cpwd").val("");
      }
      function isNone(){
-        if($("#phone").val() == ""){
+         if($("#yz").val() ==""){
+             alert("请填写验证码！");
+         }else if($("#phone").val() == ""){
             alert("电话号码不能为空");
             return false;
         }else if($("#pwd").val() == ""){

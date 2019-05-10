@@ -5,7 +5,7 @@ $(function () {
     $("#changeImg").on('click', function () {
         draw(show_num);
     })
-    $(".btn").on('click', function () {
+    $("#btn").on('click', function () {
         var val = $("#yz").val().toLowerCase();
         //toLowerCase(); 把大写转换为小写，则验证码不分大小写
         var num = show_num.join("");

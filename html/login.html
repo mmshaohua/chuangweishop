@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="../public/style.css">
     <link rel="stylesheet" href="../public/css/bootstrap.css">
     <script src="../public/jquery.js"></script>
-   <!--  <script src="../js/yzm.js"></script> -->
+    <script src="../js/yzm.js"></script>
 </head>
-<body >
+<body >  
     <div class="login-container  clearfix" >
         <div class="login-head">
             <div class="login-left">
@@ -37,7 +37,7 @@
                         <div class="con"><a href="javascript:void(0);" id="changeImg" style="cursor:pointer">换一张</a></div>
                         <canvas id="myCanvas" style="width:70px;height:30px"></canvas>
                     </div><br>
-                    <button class="btn btn-primary" onclick="login()">登录</button>
+                    <button id="btn" class="btn btn-primary" onclick="login()">登录</button>
                     <div class="login-click">
                     <input type="checkbox" class="chk">30天内记住我的信息
                     </div>
@@ -49,6 +49,28 @@
         </div>  
         </div>
     </div>
+    <footer class="login_footer">
+            <div class="login_foot">
+                <ul>
+                    <li>关于我们</li>
+                    <li>|</li>
+                    <li>联系我们</li>
+                    <li>|</li>
+                    <li>自助服务</li>
+                    <li>|</li>
+                    <li>友情链接</li>
+                    <li>|</li>
+                    <li>关注我们</li>
+                    <li>|</li>
+                    <li>购买流程</li>
+                    <li>|</li>
+                    <li>安装调试</li>
+                    <li>|</li>
+                    <li>税票制度</li>
+                </ul>
+                <p>ICP备案证号：粤ICP备09157852号</p>
+            </div>
+        </footer>
 </body>
 <script>
     function login(){
