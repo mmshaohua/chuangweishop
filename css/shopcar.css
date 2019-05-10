@@ -13,6 +13,7 @@ body{
 }
 .order_lists{
     height: 50px;
+    text-align: center;
 }
 .list_chk{
     width:80px;
@@ -20,14 +21,13 @@ body{
 }
 .list_con{
     width: 535px;
-    text-indent: 26px;
     text-align: left;
 }
 .list_price{
     width: 130px;
     text-align: center;
 }
-.list_amount{
+.list_number{
     width: 120px;
     text-align: center;
 }
@@ -49,11 +49,193 @@ body{
 .order_lists li{
     height: 100%;
     float: left;
-    line-height: 50px;
+    text-align: center;
 }
 #cartBox{
+    position: relative;
     margin-bottom:15px;
     width: 100%;
+}
+#cartBox .order_content a{
+    display: block;
+}
+.list_chk input[type=checkbox]:checked +label{
+    border: 1px solid #2e8ae4;
+    border-radius: 3px;
+}
+.list_chk input[type=checkbox]:checked +label:after{
+    opacity: 1;
+ }
+ .list_chk input[type=checkbox]:checked +label:hover::after{
+    opacity: 0.5;
+ }
+label{
+    cursor: pointer;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 13px;
+    left: 31px;
+    background-color: #000;
+    border-radius: 3px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+.nan{
+    cursor: pointer;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 203px;
+    left: 57px;
+    background-color: #000;
+    border-radius: 3px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+  label::after{
+    opacity: 0;
+    content: '';
+    position: absolute;
+    width: 9px;
+    height: 5px;
+    background-color:transparent;
+    top: 3px;
+    left: 4px;
+    border: 2px solid #2e8ae4;
+    border-top: none;
+    border-right: none;
+    transform: rotate(-45deg);
+} 
+.order_lists{
+    position: relative;
+}
+.order_lists:last-child{
+    border-bottom: none;
+}
+#chkb-top1{
+    position: relative;
+    height:16px; 
+    width:16px; 
+}
+#chkb-top2{
+    position: relative;
+    top:9px;
+    height:16px; 
+    width:16px; 
+    
+}
+#chkb-top3{
+    position: relative;
+    height:16px; 
+    width:16px; 
+}
+.glyphicon{
+    position: absolute;
+    left: 55px;
+    top: 205px;
+    color: #2e8ae3;
+
+}
+.list-img{
+    margin-top: 20px;
+}
+.list_con .list-img img{
+    width: 90px;
+    height: 90px;
+    float: left;
+}
+ .list_text{
+    float: left;
+    margin-left:10px;
+    line-height:18px;
+    width: 420px;
+    text-align: left;
+    padding-left:5px;
+    font-size: 5px;
+}
+ .list_text a{
+    color: #333;
+    padding-bottom: 10px;
+    font-size: 14px;
+}
+.list_price{
+    width: 130px;
+}
+.list_price .price{
+    line-height: 18px;
+    color: #e83733;
+    padding-top: 20px;
+    font-size: 16px;
+}
+.order_lists .text_de{
+    padding-top: 5px;
+    text-decoration: line-through;
+    color: #999;
+}
+.order_number{
+    width: 120px;
+}
+.number_box{
+    margin-top: 20px;
+    width: 77px;
+    height: 25px;
+    position: relative;
+    display: inline-block;
+}
+.number_box a{
+    float: left;
+    height: 25px;
+    width: 18px;
+    border: 1px solid #e5e5e5;
+    background-color: #f0f0f0;
+    text-align: center;
+    line-height: 23px;
+    color: #444;
+    position: absolute;
+    top:0;
+    
+    text-decoration: none;
+}
+.number_box .reduce{
+    left: 0;
+}
+.number_box input{
+    width: 39px;
+    height: 26px;
+    line-height: 17px;
+    border: 1px solid #e5e5e5;
+    color: #343434;
+    text-align: center;
+    padding: 4px 0;
+    background-color: #fff;
+    z-index: 2;
+    position: absolute;
+    left: 18px;
+    float: left;
+}
+.number_box .plus{
+    border-left-color: transparent;
+    right: 2px;
+}
+.order_lists .list_sum{
+    width: 140px;
+}
+.order_lists .sum_price{
+    line-height: 18px;
+    margin-top: 20px;
+    color: #e83733;
+    font-size: 16px;
+}
+.order_lists .list_op{
+    width: 164px;
+}
+.order_lists .list_op .del{
+    margin-top: 20px;
+    line-height: 18px;
+}
+.order_lists .list_op .del a{
+    display: block;
 }
 #bar-warpper{
     height: 55px;
@@ -82,7 +264,9 @@ body{
 .content_all{
     float: left;
     margin-left: 34px;
+    text-align: center;
 }
+
 .content_all a{
     color: #333;
     transition: all 0.5s ease-out 0s;
@@ -103,6 +287,8 @@ body{
     display: inline-block;
     padding: 0 10px;
     font-weight: normal;
+    color: #2e8ae3;
+    font-size: 16px;
 }
 .bar_right .totalMoney{
     float: left;
@@ -118,6 +304,7 @@ body{
     vertical-align: middle;
     margin-right: 10px;
     margin-left: 5px;
+    color: #e83733;
 }
 .bar_right .calbtn{
     float: left;

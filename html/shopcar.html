@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../public/css/bootstrap.css">
     <link rel="stylesheet" href="../public/style.css">
     <link rel="stylesheet" href="../css/shopcar.css">
+    <link rel="stylesheet" href="../public/iconfont/iconfont.css">
 </head>
 <body>
     <div class="inside_container">
@@ -15,27 +16,66 @@
             <div id="cartMain_hd">
                 <ul class="order_lists cartTop">
                     <li class="list_chk">
-                   <input type="checkbox" id="checkbox-top">
+                   <input type="checkbox" id="chkb-top1" onclick="checkNoAll(this);">
+                   <label for="chkb-top1"></label>
                      </li>
                     <li class="list_con">商品信息</li>
                     <li class="list_price">单价</li>
-                    <li class="list_amount">数量</li>
+                    <li class="list_number">数量</li>
                     <li class="list_sum">金额</li>
                     <li class="list_op">操作</li>
                 </ul>
             </div>
             <div id="cartBox">
                 <div class="order_content">
-
+                    <ul class="order_lists" style="height:120px;">
+                        <li class="list_chk">
+                            <input type="checkbox" id="chkb-top2" onclick="checkAll();">
+                            <label for="chkb-top2"></label>
+                        </li>
+                        <li class="list_con">
+                            <div class="list-img">
+                                <a href="#">
+                                    <img src="../images/20193235040H5.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="list_text">
+                                <a href="#">55H6(送框架)</a>
+                                <p class="p_padding">55寸|全面屏|超解像技术|防蓝光|2+32G|AI语音|运...</p>
+                                <p class="p_padding">配送公司：创维-RGB电子有限公司</p>
+                            </div>
+                        </li>
+                        <li class="list_price">
+                            <p class="price">￥3288.00</p>
+                            <p class="text_de">3599.00</p>
+                        </li>
+                        <li class="list_number">
+                            <div class="number_box">
+                                <a href="#" class="reduce">-</a>
+                                <input type="text" class="sun" value="1">
+                                <a href="#" class="plus">+</a>
+                            </div>
+                        </li>
+                        <li class="list_sum">
+                            <p class="sum_price">￥3288.00</p>
+                        </li>
+                        <li class="list_op">
+                            <p class="del">
+                                <a href="javascript:;" class="delBtn">移除商品</a>
+                            </p>
+                        </li>
+                    </ul>
                 </div>
             </div>
             <div id="bar-warpper">
                 <div class="bar_left">
                     <div class="content_all">
-                        <input type="checkbox">
-                        <span class="cancel_all">取消全选</span>
+                        <div class="list_chk" >
+                            <input type="checkbox" id="chkb-top3"  onclick="checkNoAll(this);">
+                            <label for="chkb-top3" class="nan"></label><span class="cancel_all">取消全选</span>
+                        </div>
                     </div>
-                    <div class="content_all goon_shop" onclick="location.href=''">
+                    <div class="content_all goon_shop" onclick="location.href='./index.html'">
                         <a href="javascript::" target="_blank">继续购物</a>
                     </div>
                 </div>
@@ -50,11 +90,40 @@
                         <strong class="total_text" id="money">0.00</strong>
                     </div>
                     <div class="calbtn">
-                        <a onclick=""; class="btn btn_sty btn-danger " style="cursor:pointer;">结算</a>
+                        <a onclick="locOrder();" class="btn btn_sty btn-danger " style="cursor:pointer;">结算</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </body>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/car.js"></script>
+<script>
+    //页面加载，获取所有的购物车数据
+    // var car =new Cart();
+    // var cartList =car.getCar();
+    // var str =``;//用于后续的tr拼接
+    // for(var i=0; i<str.length; i++){
+    //     str =`<tr>
+    //         <td>${cartList[i].id}</td>
+    //         <td>${cartList[i].con}</td>
+    //         <td>${cartList[i].price}</td>
+    //         <td>${cartList[i].number}</td>
+    //         <td>${cartList[i].sum}</td>
+    //         <td><a onclick ="removeGoods(${cartList[i].id})">移除商品</a></td>
+    //     </tr>
+    //     `;
+    // }
+    // //把str作为tbody中的内容
+    // $("table")[0].html()=str;
+    // //删除购物车商品
+    // function removeGoods(id){
+    //     if(confirm('确认删除？')){
+    //         car.delCarGoods(id);
+    //         location.reload;
+    //     }
+    // }
+    // $('.totalMoney').html()=car.totalPrice();
+</script>
 </html>

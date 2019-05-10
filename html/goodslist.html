@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../public/css/bootstrap.css"/>
+	</head>
+		<body class="container">
+  <h2>商品列表</h2>
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>序号</th>
+        <th>商品名称</th>
+        <th>商品价格</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>iphone6s</td>
+        <td>6000</td>
+        <td><button class="btn btn-primary" onclick="addCar(this)">加入购物车</button></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>三星s10</td>
+        <td>7000</td>
+        <td><button class="btn btn-primary"  onclick="addCar(this)">加入购物车</button></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>华为p30</td>
+        <td>6000</td>
+        <td><button class="btn btn-primary"  onclick="addCar(this)">加入购物车</button></td>
+      </tr>
+      <tr>
+        <td><img src="../images/QQ截图20190508155822.png" ></td>
+        <td>萨法沙发沙发沙发沙发沙发沙发撒大苏打</td>
+        <td>小米9</td>
+        <td>3000</td>
+        <td><button class="btn btn-primary"  onclick="addCar(this)">加入购物车</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <a href='./shopcar.html'><button class="btn btn-danger">查看购物车</button></a>
+	</body>
+	<script src="./car.js"></script>
+	<script type="text/javascript">
+		var car =new Cart();
+		//存储购物车商品的格式：[{"商品名称"，"id","price"},{},{}]
+		//加入商品到购物车
+		function addCar(ele){
+			//找到他的上一级的上一级
+			var tr =ele.parentElement.parentElement;
+			var tds =tr.children;//[td,td,td,td]
+			//构建出商品的对象格式
+			var product ={
+				"id":tds[0].innerText,
+				"title":tds[1].innerText,
+				"price":tds[2].innerText,
+				"number":1
+			};
+			//加入购物车
+			car.addCar(product);
+			
+		}
+	</script>
+</html>
