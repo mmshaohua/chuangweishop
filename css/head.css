@@ -200,6 +200,12 @@ visibility:hidden;}
     left: -113px;
     top: 10px;
 }
+.shopcare_list p a{
+    text-decoration: none;
+}
+.shopcare_list p a:hover .glyphicon{
+    color:red;
+}
 .shopcare_list p .glyphicon{
     color: #6f6e6e;
     font-size: 12px;
