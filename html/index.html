@@ -13,6 +13,7 @@
     <link type="text/css" rel="stylesheet" href="../css/index.css">
     <script src="../js/jquery.min.js"></script>
     <script src="../js/index.js"></script>
+    <script src="../js/getgoods.js"></script>
 </head>
 <body>
     <!-- 头部 -->
@@ -83,7 +84,7 @@
                             <span>
                                 共计<b>¥ 0</b>
                             </span>
-                            <button type="button" class="btn btn-danger">去购物车</button>
+                            <button type="button" class="btn btn-danger"><a href="./login.html">去购物车</a></button>
                         </div>
                     </div>
                 </div>
@@ -214,30 +215,13 @@
     <!-- 商品列表页 -->
     <div class="recommend" style="margin-top: 64px;">
         <div class="main">
-            <div  class="main_wrap clearfix">
+            <div  class="main_wrap clearfix" id="sss">
                 <div class="seeMore"><a href="#">查看更多<i class="iconfont">&#xe616;</i></a></div>
                 <div class="recomm">热情推荐</div>
-
-                <!-- <script>
-                    var str = ``;
-                    for (let i = 0; i < 5; i++) {
-                        str += `<div class="list_cont">
-                            <div class="list_pro"><a href="./goods.html?id=${goodslist[i].id}" target="_blank"><img src="${goodslist[i].pic_src}"></a></div>
-                            <div class="list_bottom">
-                                <h5><a href="./goods.html?id=${goodslist[i].id}" target="_blank">${goodslist[i].goodsName}(送智能音箱)</a></h5>
-                                <p>55寸|2+32G | 极光幻彩淅变色 | </p>
-                                <div class="price">￥${goodslist[i].price}</div>
-                            </div>
-                            <div class="hot"><i><img src="../images/imageTag3.png" /></i></div>
-                            <div class="list_hover">
-                                <span class="hover_price">￥${goodslist[i].price}</span>
-                                <span class="shop_cart"><a href="./goods.html?id=${goodslist[i].id}" target="_blank">加入购物车</a></span>
-                            </div>
-                        </div>`
-                    }
-                    $(".main_wrap").html(str);
                 
-                </script> -->
+                <!-- <div id="addhtml"></div> -->
+
+                
 
                 <div class="list_cont">
                     <div class="list_pro"><a href="./goods.html" target="_blank"><img src="../images/55H20.jpg"></a></div>

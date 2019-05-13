@@ -5,18 +5,94 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    
+    <link rel="stylesheet" href="../css/head.css">
+    <link rel="stylesheet" href="../css/shopcar.css">
+    <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../public/css/bootstrap.css">
     <link rel="stylesheet" href="../public/style.css">
-    <link rel="stylesheet" href="../css/shopcar.css">
     <link rel="stylesheet" href="../public/iconfont/iconfont.css">
 </head>
 <body>
+    <div class="header">
+                <div class="head">
+                    <div class="head_left">
+                        <div class="head_position">
+                            <div class="head_welcome">
+                                欢迎您,来到创维官网商城
+                            </div>
+                        </div>
+                    </div>
+                    <div class="head_right">
+                        <ul>
+                            <li><a href="./login.html">登录</a></li>
+                            <li><a href="./loginReg.html">注册</a></li>
+                            <li><a href="./goods.html">我的订单</a></li>
+                            <li class="top_li_wrap"><a href="#">手机端</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="top_wrap">
+               <div class="top_content">
+                    <div class="logo">
+                        <a href="./index.html" target="_blank">
+                            <img src="../images/sky_logo.png">
+                        </a>
+                    </div>
+        
+                    <div class="top_right">
+                        <div class="top_search">
+                            <div class="top_search_input">
+                                <input type="text" placeholder="输入条件" class="search_text">
+                                <i class="glyphicon glyphicon-search"></i>
+                                <input type="button" class="search_button">
+                            </div>
+                            <div class="top_search_lable">
+                                <a href="#">OlED</a>
+                                <a href="#">超博</a>
+                                <a href="#">4k超清</a>
+                                <a href="#">全面屏</a>
+                                <a href="#">防蓝光护眼</a>
+                                <a href="#">大屏</a>
+                                <a href="#">智能网络</a>
+                            </div>
+                        </div>
+                        <div class="top_searve">
+                            <dl class="shopcare_hover">
+                                <dt>
+                                    <i class="glyphicon glyphicon-shopping-cart"></i>
+                                    <a href="#">我的购物车</a>
+                                </dt>
+                                <dd>
+                                    <div class="font_number">0</div>
+                                </dd>
+                            </dl>
+                            <div class="shopcare_list">
+                                <p>
+                                    购物车列表
+                                    <a href="#"><span class="glyphicon glyphicon-remove"></span></a>
+                                </p>
+                                <div class="shopcare_botton">
+                                    <span>
+                                        共<b>0</b>件商品
+                                    </span>
+                                    <span>
+                                        共计<b>¥ 0</b>
+                                    </span>
+                                    <button type="button" class="btn btn-danger">去购物车</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+               </div>
     <div class="inside_container">
         <div id="cartMain">
             <div id="cartMain_hd">
                 <ul class="order_lists cartTop">
                     <li class="list_chk">
-                   <input type="checkbox" id="chkb-top1" onclick="checkNoAll(this);">
+                   <input type="checkbox" id="chkb-top1" checked="checked" onclick="checkNoAll(this);">
                    <label for="chkb-top1"></label>
                      </li>
                     <li class="list_con">商品信息</li>
@@ -30,7 +106,8 @@
                 <div class="order_content">
                     <ul class="order_lists" style="height:120px;">
                         <li class="list_chk">
-                            <input type="checkbox" id="chkb-top2" onclick="checkAll();">
+                            <!-- <input type="checkbox" id="chkb-top2" onclick="checkAll();"> -->
+                            <input type="checkbox" id="chkb-top2" checked="checked" _data="1">
                             <label for="chkb-top2"></label>
                         </li>
                         <li class="list_con">
@@ -51,9 +128,9 @@
                         </li>
                         <li class="list_number">
                             <div class="number_box">
-                                <a href="#" class="reduce">-</a>
-                                <input type="text" class="sun" value="1">
-                                <a href="#" class="plus">+</a>
+                                <a _data="1" href="javascript:void(0)" class="reduce" style="text-decoration:none;">-</a>
+                                <input type="number" class="sun" value="1" _data="1"/>
+                                <a _data="1" href="javascript:void(0)" class="plus" style="text-decoration:none;">+</a>
                             </div>
                         </li>
                         <li class="list_sum">
@@ -61,7 +138,7 @@
                         </li>
                         <li class="list_op">
                             <p class="del">
-                                <a href="javascript:;" class="delBtn">移除商品</a>
+                                <a href="javascript:;" class="delBtn" onclick='removeGoods(id)'>移除商品</a>
                             </p>
                         </li>
                     </ul>
@@ -71,7 +148,7 @@
                 <div class="bar_left">
                     <div class="content_all">
                         <div class="list_chk" >
-                            <input type="checkbox" id="chkb-top3"  onclick="checkNoAll(this);">
+                            <input type="checkbox" id="chkb-top3" checked="checked" onclick="checkNoAll(this);">
                             <label for="chkb-top3" class="nan"></label><span class="cancel_all">取消全选</span>
                         </div>
                     </div>
@@ -96,6 +173,32 @@
             </div>
         </div>
     </div>
+    <div class="append">
+
+
+    </div>
+    <div class="footer" style="position:absolute;left:0;bottom:-124px;">
+        <div class="main">
+            <ul>
+                <li>支付方式</li>
+                <li><a href="#">微信支付</a></li>
+                <li><a href="#">支付宝</a></li>
+            </ul>
+            <ul>
+                <li>售后服务</li>
+                <li><a href="#">增值税专营</a></li>
+                <li><a href="#">发票无忧</a></li>
+                <li><a href="#">安装维修</a></li>
+                <li><a href="#">验货提醒</a></li>
+            </ul>
+            <ul>
+                <li>400-866-5555</li>
+                <li>周一至周日 7:00 - 23:00</li>
+                <span class="glyphicon glyphicon-phone-alt"></span>
+                <input type="button" value="在线客服" class="footer_button">
+            </ul>
+        </div>
+    </div>
 </body>
 <script src="../js/jquery.min.js"></script>
 <script src="../js/car.js"></script>
@@ -103,13 +206,13 @@
     //页面加载，获取所有的购物车数据
     // var car =new Cart();
     // var cartList =car.getCar();
-    // var str =``;//用于后续的tr拼接
+    //var str =``;//用于后续的tr拼接
     // for(var i=0; i<str.length; i++){
     //     str =`<tr>
     //         <td>${cartList[i].id}</td>
-    //         <td>${cartList[i].con}</td>
+    //         <td  _data="i">${cartList[i].con}</td>
     //         <td>${cartList[i].price}</td>
-    //         <td>${cartList[i].number}</td>
+    //         <td _data="i">${cartList[i].number}</td>
     //         <td>${cartList[i].sum}</td>
     //         <td><a onclick ="removeGoods(${cartList[i].id})">移除商品</a></td>
     //     </tr>
@@ -117,13 +220,60 @@
     // }
     // //把str作为tbody中的内容
     // $("table")[0].html()=str;
-    // //删除购物车商品
-    // function removeGoods(id){
-    //     if(confirm('确认删除？')){
-    //         car.delCarGoods(id);
-    //         location.reload;
-    //     }
-    // }
-    // $('.totalMoney').html()=car.totalPrice();
+    //删除购物车商品
+    function removeGoods(id){
+        if(confirm('确认删除？')){
+           // car.delCarGoods(id);
+            location.reload;
+        }
+    }
+    var t = $(".sun");
+         $(function(){
+
+        //获得文本框对象
+       
+        t.val(parseInt(1));
+        //数量增加操作
+        $(".plus").click(function(){
+        t.val(parseInt(t.val())+1)
+        if (parseInt(t.val())!=1){
+        $('.reduce').removeAttr('disabled');
+        }
+        setTotal(t.val(),parseInt($(".price").html().substr(1)));
+        })
+        //数量减少操作
+        $(".reduce").click(function(){
+            if(parseInt(t.val())>1){
+                t.val(parseInt(t.val())-1);
+            }else{
+                $('.reduce').attr('disabled','disabled');
+                alert("不能更新购物车了");
+            }
+        setTotal(t.val(),parseInt($(".price").html().substr(1)));
+        })
+        
+        setTotal(t.val(),parseInt($(".price").html().substr(1)));
+})
+$("#chkb-top2").on("change",function(e){
+    // console.log(e.target.checked)
+    // console.log(e.target.attributes._data)
+    if(e.target.checked){
+        setTotal(t.val(),parseInt($(".price").html().substr(1)));
+        checkNoAll(this)
+    }else{
+        setTotal(0,0);
+    } 
+})
+//计算总价
+function setTotal(num,price){
+    // console.log($(".price").html().substr(1))
+    // console.log(price)
+    $(".total_text").html((parseInt(num)*price).toFixed(2));//toFixed()是保留小数点的函数很实用哦
+    $("#cnum").html((parseInt(num)));
+}
+for(var i=0;i<10;i++){ 
+sum += i; 
+}
+ console.log( i )
 </script>
 </html>

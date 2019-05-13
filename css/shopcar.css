@@ -6,6 +6,7 @@ body{
 }
 #cartMain{
     position: relative;
+    top: 117px;
     padding: 0 20px;
     width: 1210px;
     margin: 15px auto 0 auto;
@@ -66,7 +67,7 @@ body{
 .list_chk input[type=checkbox]:checked +label:after{
     opacity: 1;
  }
- .list_chk input[type=checkbox]:checked +label:hover::after{
+ .list_chk input[type=checkbox] +label:hover::after{
     opacity: 0.5;
  }
 label{

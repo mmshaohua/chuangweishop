@@ -112,7 +112,7 @@
                  arr = eval(localStorage.user);
                  for(e in arr){
                      if($("#phone").val() == arr[e].loginName){
-                         alert("账号已注册！");
+                         alert("账号已被注册！请重新输入");
                          clear();
                          return;
                      }
@@ -126,7 +126,7 @@
              console.log($("#phone").val());
              localStorage.user = JSON.stringify(arr);
              alert("注册成功");
-             window.location.href = "login.html";
+             window.location.href = "./login.html";
              clear();
          }
      }
