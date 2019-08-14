@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+img{
+    display: block;
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
