@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../public/style.css">
+    <link rel="stylesheet" href="../public/css/bootstrap.css">
+    <script src="../public/jquery.js"></script>
+    <script src="../js/yzm.js"></script>
+</head>
+<body >  
+    <div class="login-container  clearfix" >
+        <div class="login-head">
+            <div class="login-left">
+                <a class="logo"  href="./index.html"><img src="../images/logo.png" ></a>
+            </div>
+            <div class="login-right">
+            没有账号？<a href="./loginReg.html">请注册</a>
+            </div>
+        </div>
+        <div class="warp">
+        <div class="img-left">
+            <img src="../images/login_ad.png" alt="凝聚健康科技">
+        </div>
+        
+        <div class="list-right">
+            <h3>会员登录</h3>
+            <div class="list-content clearfix">
+                <div class="list-on">
+                    <input type="text" id="phone" placeholder="邮箱/手机号/用户名"><br>
+                    <input type="password" id="pwd" placeholder="请输入登入密码"><br>
+                    <input type="text" id="yz" placeholder="请输入验证码">
+                    <div class="big-door">
+                        <div class="con"><a href="javascript:void(0);" id="changeImg" style="cursor:pointer">换一张</a></div>
+                        <canvas id="myCanvas" style="width:70px;height:30px"></canvas>
+                    </div><br>
+                    <button id="btn" class="btn btn-primary" onclick="login()">登录</button>
+                    <div class="login-click">
+                    <input type="checkbox" class="chk">30天内记住我的信息
+                    </div>
+                    <div class="login-click-right">
+                        <a href="./loginReg.html">注册</a>
+                    </div>
+                </div>
+            </div>
+        </div>  
+        </div>
+    </div>
+    <footer class="login_footer">
+            <div class="login_foot">
+                <ul>
+                    <li>关于我们</li>
+                    <li>|</li>
+                    <li>联系我们</li>
+                    <li>|</li>
+                    <li>自助服务</li>
+                    <li>|</li>
+                    <li>友情链接</li>
+                    <li>|</li>
+                    <li>关注我们</li>
+                    <li>|</li>
+                    <li>购买流程</li>
+                    <li>|</li>
+                    <li>安装调试</li>
+                    <li>|</li>
+                    <li>税票制度</li>
+                </ul>
+                <p>ICP备案证号：粤ICP备09157852号</p>
+            </div>
+        </footer>
+</body>
+<script>
+    function login(){
+        if(isNone()){
+            if(localStorage.user){
+                arr = eval(localStorage.user);
+                var k = 0;
+                for(e in arr){
+                    if($("#phone").val().trim() == arr[e].loginName){
+                        if($("#pwd").val().trim() == arr[e].loginPsd){
+                            //alert('登录成功');
+                            clear();
+                            k = 0;
+                            location.href = "index.html";
+                            return;
+                        }else{
+                            alert("密码错误");
+                            clear();
+                            k = 0;
+                            return;
+                        }
+                    }else{
+                        k = 1;
+                    }
+                }
+                if(k = 1){
+                    alert("用户不存在，正在跳转到注册界面！");
+                    window.location.href = "./loginReg.html";
+                    clear();
+                }
+            }
+        }
+    }
+    function clear(){
+        $("#phone").val("");
+        $("#pwd").val("");
+    }
+    function isNone(){
+        if($("#phone").val().trim() == ""){
+            alert("用户名不能为空");
+            return false;
+        }else if($("#pwd").val().trim() == ""){
+            alert("密码不能为空");
+            return false;
+        }
+        return true;
+    }
+</script>
+</html>
